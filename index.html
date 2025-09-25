@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Изучение химии в игровой форме</title>
+    <link rel="icon" type="image/x-icon" href="/media/favicon.ico" />
+
+    <meta property="og:title" content="Изучение химии в игровой форме" />
+    <meta property="og:description" content="Изучение химии в игровой форме" />
+    <meta property="og:url" content="" />
+
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="scripts/main.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="/">
+        <img src="media/logo.png" alt="Логотип приложения" class="logo" />
+      </a>
+    </header>
+
+    <div class="container">
+      <div class="header">
+        <h1>Химический Путь</h1>
+        <p>Пройди все уроки и стани мастером химии!</p>
+      </div>
+
+      <div class="path-container">
+        <div class="lessons-container">
+          <!-- Урок 1 -->
+          <div class="lesson-item">
+            <div class="lesson-connector"></div>
+            <button
+              class="lesson-button lesson-completed"
+              data-tooltip="Атомы и элементы"
+            >
+              <span class="lesson-icon">⚛️</span>
+            </button>
+          </div>
+
+          <!-- Урок 2 -->
+          <div class="lesson-item">
+            <div class="lesson-connector"></div>
+            <button
+              class="lesson-button lesson-completed"
+              data-tooltip="Молекулы"
+            >
+              <span class="lesson-icon">🔬</span>
+            </button>
+          </div>
+
+          <!-- Урок 3 (текущий) -->
+          <div class="lesson-item">
+            <div class="lesson-connector"></div>
+            <button
+              class="lesson-button lesson-current"
+              data-tooltip="Химические реакции"
+            >
+              <span class="lesson-icon">⚡</span>
+            </button>
+          </div>
+
+          <!-- Урок 4 -->
+          <div class="lesson-item">
+            <div class="lesson-connector"></div>
+            <button class="lesson-button lesson-locked" data-tooltip="Растворы">
+              <span class="lesson-icon">🧪</span>
+            </button>
+          </div>
+
+          <!-- Урок 5 -->
+          <div class="lesson-item">
+            <div class="lesson-connector"></div>
+            <button
+              class="lesson-button lesson-locked"
+              data-tooltip="Окисление"
+            >
+              <span class="lesson-icon">🔥</span>
+            </button>
+          </div>
+
+          <!-- Урок 6 -->
+          <div class="lesson-item">
+            <div class="lesson-connector"></div>
+            <button
+              class="lesson-button lesson-locked"
+              data-tooltip="Периодическая таблица"
+            >
+              <span class="lesson-icon">📊</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-info">
+          <span>Прогресс: 2/6 уроков</span>
+          <span>33% завершено</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

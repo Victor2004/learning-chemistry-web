@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #f7f7f7, #ffd89c);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header p {
+  font-size: 1.2em;
+  opacity: 0.8;
+  color: #666;
+}
+
+.path-container {
+  position: relative;
+  margin: 40px 0;
+  min-height: 700px;
+}
+
+/* Контейнер для уроков */
+.lessons-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Стиль элемента урока */
+.lesson-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+/* Позиционирование по вертикали */
+.lesson-item:nth-child(1) {
+  order: 1;
+}
+.lesson-item:nth-child(2) {
+  order: 2;
+}
+.lesson-item:nth-child(3) {
+  order: 3;
+}
+.lesson-item:nth-child(4) {
+  order: 4;
+}
+.lesson-item:nth-child(5) {
+  order: 5;
+}
+.lesson-item:nth-child(6) {
+  order: 6;
+}
+
+/* Стиль кнопки урока */
+.lesson-button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Подсказка при наведении */
+.lesson-button::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: normal;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.lesson-button::after {
+  content: "";
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.lesson-button:hover::before,
+.lesson-button:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Состояния уроков */
+.lesson-completed {
+  background: #58cc02;
+  color: white;
+  transform: scale(1.1);
+}
+
+.lesson-current {
+  background: #ffc800;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.lesson-locked {
+  background: #e5e5e5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Иконки внутри кнопок */
+.lesson-icon {
+  font-size: 2em;
+}
+
+/* Анимация пульсации для текущего урока */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Обводка для пройденных уроков */
+.lesson-completed::after {
+  content: "✓";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ffc800;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Соединительные линии между уроками */
+.lesson-connector {
+  position: absolute;
+  background: #ffc800;
+  width: 4px;
+  height: 40px;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  border-radius: 2px;
+}
+
+/* Убираем соединительную линию у первого урока */
+.lesson-item:first-child .lesson-connector {
+  display: none;
+}
+
+/* Прогресс-бар */
+.progress-container {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 30px;
+  border: 2px solid #ffc800;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.progress-bar {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #ffc800;
+  border-radius: 6px;
+  transition: width 0.5s ease;
+  width: 33%;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .path-container {
+    min-height: 600px;
+  }
+
+  .lesson-button {
+    width: 80px;
+    height: 80px;
+    font-size: 1.3em;
+  }
+
+  .lesson-button::before {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .lesson-connector {
+    height: 30px;
+    top: -30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .path-container {
+    min-height: 500px;
+  }
+
+  .lesson-button {
+    width: 70px;
+    height: 70px;
+    font-size: 1.1em;
+  }
+
+  .lesson-button::before {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .lesson-connector {
+    height: 25px;
+    top: -25px;
+    width: 3px;
+  }
+}
