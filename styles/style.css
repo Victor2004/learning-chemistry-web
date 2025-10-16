@@ -8,49 +8,116 @@ body {
   font-family: "Arial", sans-serif;
   background: linear-gradient(135deg, #f7f7f7, #ffd89c);
   min-height: 100vh;
-  padding: 20px;
+  padding: 0;
 }
 
 .container {
   max-width: 600px;
   margin: 0 auto;
+  padding: 20px;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.logo {
-  height: 60px;
-  width: auto;
-}
-
+/* Стили для хедера */
 .header {
-  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(135deg, #c5cedd 0%, #dae3f3 100%);
+  overflow: visible; /* Меняем на visible чтобы волны были видны */
   margin-bottom: 40px;
-  color: #333;
 }
 
-.header h1 {
+/* Основной контент хедера */
+.header-content {
+  position: relative;
+  z-index: 4;
+  padding: 3rem;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Контейнер для нижней волны - ВНЕ хедера по позиционированию */
+.wave-container-bottom {
+  position: absolute;
+  bottom: 0%; /* Выдвигаем волну за пределы хедера */
+  left: 0%;
+  width: 100%;
+  height: 52px;
+  z-index: 3; /* Высокий z-index чтобы была поверх всего */
+}
+
+/* Контейнер для верхней волны - ВНЕ хедера по позиционированию */
+.wave-container-top {
+  position: absolute;
+  top: 100px; /* Выдвигаем волну за пределы хедера */
+  left: 0;
+  width: 100%;
+  height: 52px;
+  z-index: 3; /* Высокий z-index чтобы была поверх всего */
+  transform: rotate(180deg);
+}
+
+.rainbow-wave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #ff0000 0%,
+    #ff7f00 16.66%,
+    #ffff00 33.33%,
+    #00ff00 50%,
+    #0000ff 66.66%,
+    #4b0082 83.33%,
+    #9400d3 100%
+  );
+  /* Волна с подъемами и спадами */
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,96 C150,24 300,168 450,96 C600,24 750,168 900,96 C1050,24 1200,168 1200,168 L1200,120 L0,120 Z" fill="white"/></svg>');
+  mask-size: 1200px 100%;
+  mask-repeat: repeat-x;
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,96 C150,24 300,168 450,96 C600,24 750,168 900,96 C1050,24 1200,168 1200,168 L1200,120 L0,120 Z" fill="white"/></svg>');
+  -webkit-mask-size: 100px 100%;
+  -webkit-mask-repeat: repeat-x;
+}
+
+/* Для верхней волны немного смещаем градиент для красоты */
+.wave-container-top .rainbow-wave {
+  background: linear-gradient(
+    90deg,
+    #9400d3 0%,
+    #4b0082 16.66%,
+    #0000ff 33.33%,
+    #00ff00 50%,
+    #ffff00 66.66%,
+    #ff7f00 83.33%,
+    #ff0000 100%
+  );
+}
+
+.header-content h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.header p {
+.header-content p {
   font-size: 1.2em;
-  opacity: 0.8;
-  color: #666;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .path-container {
   position: relative;
   margin: 40px 0;
   min-height: 700px;
+  z-index: 1; /* Убеждаемся что контент ниже волн */
 }
 
-/* Контейнер для уроков */
 .lessons-container {
   position: relative;
   height: 100%;
@@ -59,19 +126,16 @@ header {
   align-items: center;
 }
 
-/* Стиль элемента урока */
 .lesson-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px 0;
   position: relative;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease;
+  opacity: 1;
+  transform: none;
 }
 
-/* Позиционирование по вертикали */
 .lesson-item:nth-child(1) {
   order: 1;
 }
@@ -91,7 +155,6 @@ header {
   order: 6;
 }
 
-/* Стиль кнопки урока */
 .lesson-button {
   width: 100px;
   height: 100px;
@@ -111,7 +174,6 @@ header {
   z-index: 2;
 }
 
-/* Подсказка при наведении */
 .lesson-button::before {
   content: attr(data-tooltip);
   position: absolute;
@@ -151,7 +213,6 @@ header {
   visibility: visible;
 }
 
-/* Состояния уроков */
 .lesson-completed {
   background: #58cc02;
   color: white;
@@ -170,12 +231,10 @@ header {
   cursor: not-allowed;
 }
 
-/* Иконки внутри кнопок */
 .lesson-icon {
   font-size: 2em;
 }
 
-/* Анимация пульсации для текущего урока */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -188,7 +247,6 @@ header {
   }
 }
 
-/* Обводка для пройденных уроков */
 .lesson-completed::after {
   content: "✓";
   position: absolute;
@@ -206,7 +264,6 @@ header {
   font-weight: bold;
 }
 
-/* Соединительные линии между уроками */
 .lesson-connector {
   position: absolute;
   background: #ffc800;
@@ -219,18 +276,17 @@ header {
   border-radius: 2px;
 }
 
-/* Убираем соединительную линию у первого урока */
 .lesson-item:first-child .lesson-connector {
   display: none;
 }
 
-/* Прогресс-бар */
 .progress-container {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   padding: 15px;
   margin-top: 30px;
   border: 2px solid #ffc800;
+  z-index: 1;
 }
 
 .progress-info {
@@ -257,8 +313,41 @@ header {
   width: 33%;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .header {
+    /* height: 250px; */
+    margin-bottom: 30px;
+  }
+
+  /* .wave-container-bottom,
+  .wave-container-top {
+    height: 60px;
+  }
+
+  .wave-container-bottom {
+    bottom: -50px;
+  }
+
+  .wave-container-top {
+    top: -50px;
+  } */
+
+  .header-content {
+    padding: 2rem;
+  }
+
+  .header-content h1 {
+    font-size: 2em;
+  }
+
+  .header-content p {
+    font-size: 1.1em;
+  }
+
   .path-container {
     min-height: 600px;
   }
@@ -281,6 +370,40 @@ header {
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .header {
+    /* height: 220px; */
+    margin-bottom: 20px;
+  }
+
+  /* .wave-container-bottom,
+  .wave-container-top {
+    height: 50px;
+  }
+
+  .wave-container-bottom {
+    bottom: -40px;
+  }
+
+  .wave-container-top {
+    top: -40px;
+  } */
+
+  .header-content {
+    padding: 1.5rem;
+  }
+
+  .header-content h1 {
+    font-size: 1.8em;
+  }
+
+  .header-content p {
+    font-size: 1em;
+  }
+
   .path-container {
     min-height: 500px;
   }

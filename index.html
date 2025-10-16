@@ -4,32 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Изучение химии в игровой форме</title>
-    <link rel="icon" type="image/x-icon" href="/media/favicon.ico" />
 
     <meta property="og:title" content="Изучение химии в игровой форме" />
     <meta property="og:description" content="Изучение химии в игровой форме" />
-    <meta property="og:url" content="" />
+    <meta
+      property="og:url"
+      content="https://victor2004.github.io/learning-chemistry-web/"
+    />
 
     <link rel="stylesheet" href="styles/style.css" />
-    <script src="scripts/main.js"></script>
   </head>
 
   <body>
-    <header>
-      <a href="/">
-        <img src="media/logo.png" alt="Логотип приложения" class="logo" />
-      </a>
-    </header>
-
-    <div class="container">
-      <div class="header">
+    <header class="header">
+      <div class="header-content">
         <h1>Химический Путь</h1>
         <p>Пройди все уроки и стани мастером химии!</p>
       </div>
 
+      <!-- Верхняя волна -->
+      <div class="wave-container-top">
+        <div class="rainbow-wave"></div>
+      </div>
+
+      <!-- Нижняя волна -->
+      <div class="wave-container-bottom">
+        <div class="rainbow-wave"></div>
+      </div>
+    </header>
+
+    <div class="container">
       <div class="path-container">
         <div class="lessons-container">
-          <!-- Урок 1 -->
           <div class="lesson-item">
             <div class="lesson-connector"></div>
             <button
@@ -40,7 +46,6 @@
             </button>
           </div>
 
-          <!-- Урок 2 -->
           <div class="lesson-item">
             <div class="lesson-connector"></div>
             <button
@@ -51,7 +56,6 @@
             </button>
           </div>
 
-          <!-- Урок 3 (текущий) -->
           <div class="lesson-item">
             <div class="lesson-connector"></div>
             <button
@@ -62,7 +66,6 @@
             </button>
           </div>
 
-          <!-- Урок 4 -->
           <div class="lesson-item">
             <div class="lesson-connector"></div>
             <button class="lesson-button lesson-locked" data-tooltip="Растворы">
@@ -70,7 +73,6 @@
             </button>
           </div>
 
-          <!-- Урок 5 -->
           <div class="lesson-item">
             <div class="lesson-connector"></div>
             <button
@@ -81,7 +83,6 @@
             </button>
           </div>
 
-          <!-- Урок 6 -->
           <div class="lesson-item">
             <div class="lesson-connector"></div>
             <button
@@ -104,5 +105,7 @@
         </div>
       </div>
     </div>
+
+    <script src="scripts/main.js"></script>
   </body>
 </html>
