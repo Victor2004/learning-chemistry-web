@@ -41,16 +41,16 @@ function applyRandomOffsets() {
 }
 
 // Добавляем обработчики событий для кнопок
-document.querySelectorAll(".lesson-button").forEach((button) => {
-  button.addEventListener("click", function () {
-    if (!this.classList.contains("lesson-locked")) {
-      const lessonName = this.getAttribute("data-tooltip");
-      alert(`Начинаем урок: ${lessonName}`);
-    } else {
-      alert("Этот урок пока заблокирован! Пройди предыдущие уроки.");
-    }
-  });
-});
+// document.querySelectorAll(".lesson-button").forEach((button) => {
+//   button.addEventListener("click", function () {
+//     if (!this.classList.contains("lesson-locked")) {
+//       const lessonName = this.getAttribute("data-tooltip");
+//       alert(`Начинаем урок: ${lessonName}`);
+//     } else {
+//       alert("Этот урок пока заблокирован! Пройди предыдущие уроки.");
+//     }
+//   });
+// });
 
 // Инициализация при загрузке страницы
 document.addEventListener("DOMContentLoaded", function () {

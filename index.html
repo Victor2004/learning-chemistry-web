@@ -23,8 +23,15 @@
   <body>
     <header class="header">
       <div class="header-content">
-        <h1>Химический Путь</h1>
-        <p>Пройди все уроки и стани мастером химии!</p>
+        <div class="progress-container">
+          <div class="progress-info">
+            <span>Прогресс: 2/12 уроков</span>
+            <span>17% завершено</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
       </div>
 
       <!-- Верхняя волна -->
@@ -41,72 +48,89 @@
     <div class="container">
       <div class="path-container">
         <div class="lessons-container">
+          <!-- Урок 1 -->
           <div class="lesson-item">
             <div class="lesson-connector"></div>
-            <button
+            <a
+              href="/notes1.html"
               class="lesson-button lesson-completed"
-              data-tooltip="Атомы и элементы"
+              data-tooltip="[Лекция] Урок 1: Химия – часть естествознания"
             >
-              <span class="lesson-icon">⚛️</span>
-            </button>
+              <img src="media/notes.png" class="lesson-icon" />
+            </a>
           </div>
 
+          <!-- Урок 2 -->
           <div class="lesson-item">
             <div class="lesson-connector"></div>
-            <button
+            <a
+              href="/"
               class="lesson-button lesson-completed"
-              data-tooltip="Молекулы"
+              data-tooltip="[Тест] Урок 1: Химия – часть естествознания"
             >
-              <span class="lesson-icon">🔬</span>
-            </button>
+              <img src="media/lesson_test.png" class="lesson-icon" />
+            </a>
           </div>
 
+          <!-- Урок 3 (текущий) -->
           <div class="lesson-item">
             <div class="lesson-connector"></div>
-            <button
+            <a
+              href="/"
               class="lesson-button lesson-current"
               data-tooltip="Химические реакции"
             >
-              <span class="lesson-icon">⚡</span>
-            </button>
+              <img src="media/notes.png" class="lesson-icon" />
+            </a>
           </div>
 
+          <!-- Урок 4 -->
           <div class="lesson-item">
             <div class="lesson-connector"></div>
-            <button class="lesson-button lesson-locked" data-tooltip="Растворы">
-              <span class="lesson-icon">🧪</span>
-            </button>
+            <a
+              href="/"
+              class="lesson-button lesson-locked"
+              data-tooltip="Растворы"
+            >
+              <img src="media/lesson_test.png" class="lesson-icon" />
+            </a>
           </div>
 
+          <!-- Урок 5 -->
           <div class="lesson-item">
             <div class="lesson-connector"></div>
-            <button
+            <a
+              href="/"
               class="lesson-button lesson-locked"
               data-tooltip="Окисление"
             >
-              <span class="lesson-icon">🔥</span>
-            </button>
+              <img src="media/notes.png" class="lesson-icon" />
+            </a>
           </div>
 
+          <!-- Урок 6 -->
           <div class="lesson-item">
             <div class="lesson-connector"></div>
-            <button
+            <a
+              href="https://example.com/lesson6"
               class="lesson-button lesson-locked"
               data-tooltip="Периодическая таблица"
             >
-              <span class="lesson-icon">📊</span>
-            </button>
+              <img src="media/lesson_test.png" class="lesson-icon" />
+            </a>
           </div>
-        </div>
-      </div>
 
-      <div class="progress-container">
-        <div class="progress-info">
-          <span>Прогресс: 2/6 уроков</span>
-          <span>33% завершено</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill"></div>
+          <!-- Урок 7 -->
+          <div class="lesson-item">
+            <div class="lesson-connector"></div>
+            <a
+              href="https://example.com/lesson7"
+              class="lesson-button lesson-locked"
+              data-tooltip="Периодическая таблица"
+            >
+              <img src="media/module_test.png" class="lesson-icon" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

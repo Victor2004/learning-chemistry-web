@@ -6,7 +6,7 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #f7f7f7, #ffd89c);
+  background: linear-gradient(180deg, #d4c0db, #7030a0);
   min-height: 100vh;
   padding: 0;
 }
@@ -22,7 +22,7 @@ body {
   position: relative;
   width: 100%;
   height: 100px;
-  background: linear-gradient(135deg, #c5cedd 0%, #dae3f3 100%);
+  background: linear-gradient(180deg, #e4eaf4 0%, #dae3f3 100%);
   overflow: visible; /* Меняем на visible чтобы волны были видны */
   margin-bottom: 40px;
 }
@@ -41,24 +41,24 @@ body {
   justify-content: center;
 }
 
-/* Контейнер для нижней волны */
-.wave-container-bottom {
-  position: absolute;
-  bottom: 0%; /* Выдвигаем волну за пределы хедера */
-  left: 0%;
-  width: 100%;
-  height: 52px;
-  z-index: 3; /* Высокий z-index чтобы была поверх всего */
-}
-
 /* Контейнер для верхней волны */
 .wave-container-top {
   position: absolute;
-  top: 100px; /* Выдвигаем волну за пределы хедера */
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 52px;
+  z-index: 3;
+}
+
+/* Контейнер для нижней волны */
+.wave-container-bottom {
+  position: absolute;
+  top: 100px;
   left: 0;
   width: 100%;
   height: 52px;
-  z-index: 3; /* Высокий z-index чтобы была поверх всего */
+  z-index: 3;
   transform: rotate(180deg);
 }
 
@@ -68,13 +68,13 @@ body {
   height: 100%;
   background: linear-gradient(
     90deg,
-    #ff0000 0%,
-    #ff7f00 16.66%,
-    #ffff00 33.33%,
-    #00ff00 50%,
-    #0000ff 66.66%,
-    #4b0082 83.33%,
-    #9400d3 100%
+    #ff5656 0%,
+    #ff9e3d 16.66%,
+    #ffff3e 33.33%,
+    #3eff3e 50%,
+    #3838ff 66.66%,
+    #591788 83.33%,
+    #9f34cd 100%
   );
   /* Волна с подъемами и спадами */
   mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,96 C150,24 300,168 450,96 C600,24 750,168 900,96 C1050,24 1200,168 1200,168 L1200,120 L0,120 Z" fill="white"/></svg>');
@@ -124,35 +124,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .lesson-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px 0;
+  margin: 15px 0;
   position: relative;
   opacity: 1;
   transform: none;
-}
-
-.lesson-item:nth-child(1) {
-  order: 1;
-}
-.lesson-item:nth-child(2) {
-  order: 2;
-}
-.lesson-item:nth-child(3) {
-  order: 3;
-}
-.lesson-item:nth-child(4) {
-  order: 4;
-}
-.lesson-item:nth-child(5) {
-  order: 5;
-}
-.lesson-item:nth-child(6) {
-  order: 6;
+  flex: 1;
+  z-index: 2;
 }
 
 .lesson-button {
@@ -171,7 +155,8 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   position: relative;
-  z-index: 2;
+  z-index: 3; /* Кнопка выше контейнера */
+  text-decoration: none;
 }
 
 .lesson-button::before {
@@ -229,10 +214,14 @@ body {
   background: #e5e5e5;
   color: #999;
   cursor: not-allowed;
+  pointer-events: none; /* Отключаем клики по заблокированным ссылкам */
 }
 
 .lesson-icon {
-  font-size: 2em;
+  width: 60px; /* Размер картинки */
+  height: 60px;
+  object-fit: contain; /* Сохраняем пропорции */
+  /* border-radius: 50%; */
 }
 
 @keyframes pulse {
@@ -269,48 +258,54 @@ body {
   background: #ffc800;
   width: 4px;
   height: 40px;
-  top: -40px;
+  top: -28px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
   border-radius: 2px;
 }
 
+/* Убираем соединительную линию у первого урока */
 .lesson-item:first-child .lesson-connector {
   display: none;
 }
 
 .progress-container {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  padding: 15px;
-  margin-top: 30px;
-  border: 2px solid #ffc800;
-  z-index: 1;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-top: -20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  /* backdrop-filter: blur(10px); */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .progress-info {
   display: flex;
   justify-content: space-between;
-  color: #333;
+  color: #000000;
   margin-bottom: 10px;
   font-weight: bold;
+  font-size: 0.9em;
 }
 
 .progress-bar {
   height: 12px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 6px;
   overflow: hidden;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .progress-fill {
   height: 100%;
-  background: #ffc800;
+  background: linear-gradient(90deg, #ffd700, #ffed4e);
   border-radius: 6px;
   transition: width 0.5s ease;
   width: 33%;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -355,7 +350,6 @@ body {
   .lesson-button {
     width: 80px;
     height: 80px;
-    font-size: 1.3em;
   }
 
   .lesson-button::before {
@@ -365,7 +359,26 @@ body {
 
   .lesson-connector {
     height: 30px;
-    top: -30px;
+    top: -28px;
+  }
+
+  .lesson-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .progress-container {
+    max-width: 350px;
+    padding: 12px 15px;
+    /* margin-top: 20px; */
+  }
+
+  .progress-info {
+    font-size: 0.85em;
+  }
+
+  .progress-bar {
+    height: 10px;
   }
 }
 
@@ -411,7 +424,6 @@ body {
   .lesson-button {
     width: 70px;
     height: 70px;
-    font-size: 1.1em;
   }
 
   .lesson-button::before {
@@ -421,7 +433,29 @@ body {
 
   .lesson-connector {
     height: 25px;
-    top: -25px;
+    top: -29px;
     width: 3px;
+  }
+
+  .lesson-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .progress-container {
+    max-width: 300px;
+    padding: 10px 12px;
+    /* margin-top: 15px; */
+  }
+
+  .progress-info {
+    font-size: 0.8em;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .progress-bar {
+    height: 8px;
   }
 }
