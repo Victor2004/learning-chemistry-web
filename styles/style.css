@@ -31,7 +31,7 @@ body {
 .header-content {
   position: relative;
   z-index: 4;
-  padding: 3rem;
+  padding: 1.5rem 2rem 3rem;
   color: white;
   text-align: center;
   font-family: Arial, sans-serif;
@@ -39,6 +39,62 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.header-center {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 2px solid #ff7f00; /* Оранжевая рамка */
+  color: #ffff41; /* Оранжевый текст */
+  background-color: #ffc035;
+  padding: 10px 20px;
+  border-radius: 10px; /* Скругление */
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 5;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+}
+
+/* Левая кнопка */
+.header-button-left {
+  left: 2rem;
+}
+
+/* Правая кнопка */
+.header-button-right {
+  right: 2rem;
+}
+
+/* Эффекты при наведении */
+.header-button:hover {
+  background: #ffb20c; /* Оранжевый фон при наведении */
+  color: white;
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 127, 0, 0.3);
+}
+
+/* Эффект при нажатии */
+.header-button:active {
+  transform: translateY(-50%) scale(0.95);
+  box-shadow: 0 2px 6px rgba(255, 127, 0, 0.2);
+}
+
+.button-text {
+  font-size: 19px;
 }
 
 /* Контейнер для верхней волны */
@@ -153,10 +209,11 @@ body {
   font-weight: bold;
   color: #333;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 3; /* Кнопка выше контейнера */
+  transition: all 0.2s ease;
+  position: relative; /* Важно для абсолютного позиционирования замка */
+  z-index: 3;
   text-decoration: none;
+  overflow: hidden; /* Чтобы ничего не выходило за границы кнопки */
 }
 
 .lesson-button::before {
@@ -173,7 +230,7 @@ body {
   font-weight: normal;
   white-space: nowrap;
   opacity: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
   transition: all 0.3s ease;
   z-index: 1000;
   pointer-events: none;
@@ -185,8 +242,6 @@ body {
   bottom: 110%;
   left: 50%;
   transform: translateX(-50%);
-  border: 5px solid transparent;
-  border-top-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -198,42 +253,60 @@ body {
   visibility: visible;
 }
 
+.lesson-button:hover {
+  transform: scale(1.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Анимация нажатия для доступных кнопок */
+.lesson-button:active:not(.lesson-locked),
+.lesson-button:active:not(.lesson-locked) .lesson-icon {
+  transform: scale(0.92); /* Уменьшение на 8% */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Уменьшаем тень при нажатии */
+  transition: all 0.1s ease; /* Быстрая анимация при нажатии */
+}
+
 .lesson-completed {
   background: #58cc02;
   color: white;
-  transform: scale(1.1);
 }
 
 .lesson-current {
   background: #ffc800;
   color: white;
-  animation: pulse 2s infinite;
+}
+
+.lesson-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.lesson-lock-icon {
+  position: absolute; /* Абсолютное позиционирование поверх иконки */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрирование */
+  width: 58px; /* Размер замка */
+  height: auto;
+  object-fit: contain;
+  opacity: 0.8; /* Полупрозрачность */
+  z-index: 4; /* Выше чем основная иконка */
+  filter: drop-shadow(
+    0 2px 4px rgba(0, 0, 0, 0.3)
+  ); /* Тень для лучшей видимости */
 }
 
 .lesson-locked {
   background: #e5e5e5;
   color: #999;
   cursor: not-allowed;
-  pointer-events: none; /* Отключаем клики по заблокированным ссылкам */
+  pointer-events: none;
 }
 
-.lesson-icon {
-  width: 60px; /* Размер картинки */
-  height: 60px;
-  object-fit: contain; /* Сохраняем пропорции */
-  /* border-radius: 50%; */
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+.lesson-locked .lesson-icon {
+  opacity: 0.4; /* Делаем основную иконку более прозрачной */
+  filter: grayscale(0.7); /* Немного обесцвечиваем */
 }
 
 .lesson-completed::after {
@@ -274,7 +347,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   padding: 15px 20px;
-  margin-top: -20px;
+  margin-top: 10px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   /* backdrop-filter: blur(10px); */
   max-width: 600px;
@@ -332,7 +405,21 @@ body {
   } */
 
   .header-content {
-    padding: 2rem;
+    padding: 1rem 1.5rem 2.5rem;
+  }
+
+  .header-button {
+    padding: 8px 16px;
+    font-size: 13px;
+    min-width: 80px;
+  }
+
+  .header-button-left {
+    left: 1.5rem;
+  }
+
+  .header-button-right {
+    right: 1.5rem;
   }
 
   .header-content h1 {
@@ -365,6 +452,11 @@ body {
   .lesson-icon {
     width: 50px;
     height: 50px;
+  }
+
+  .lesson-lock-icon {
+    width: 46px;
+    height: auto;
   }
 
   .progress-container {
@@ -406,7 +498,25 @@ body {
   } */
 
   .header-content {
-    padding: 1.5rem;
+    padding: 0.8rem 1rem 2rem;
+  }
+
+  .header-button {
+    padding: 6px 12px;
+    font-size: 12px;
+    min-width: 70px;
+  }
+
+  .header-button-left {
+    left: 1rem;
+  }
+
+  .header-button-right {
+    right: 1rem;
+  }
+
+  .button-text {
+    font-size: 14px;
   }
 
   .header-content h1 {
@@ -442,8 +552,13 @@ body {
     height: 40px;
   }
 
+  .lesson-lock-icon {
+    width: 40px;
+    height: auto;
+  }
+
   .progress-container {
-    max-width: 300px;
+    max-width: 90px;
     padding: 10px 12px;
     /* margin-top: 15px; */
   }
