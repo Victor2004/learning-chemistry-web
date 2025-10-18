@@ -1,0 +1,352 @@
+/* Стили для контейнера статьи */
+.article-container {
+  position: relative;
+  margin: 40px 0;
+  min-height: auto;
+  z-index: 1;
+  background: #ffffff9f;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Стили для заголовков статьи */
+.article-container h2 {
+  font-size: 2.2em;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.article-container h3 {
+  font-size: 1.8em;
+  color: #2980b9;
+  margin: 30px 0 18px 0;
+  font-weight: 600;
+  padding-left: 15px;
+  border-left: 4px solid #3498db;
+}
+
+.article-container h4 {
+  font-size: 1.4em;
+  color: #5d6d7e;
+  margin: 25px 0 15px 0;
+  font-weight: 500;
+}
+
+/* Стили для основного текста */
+.article-container p {
+  font-size: 1.15em;
+  line-height: 1.7;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: justify;
+  font-family: "Arial", sans-serif;
+}
+
+/* Стили для блока определения */
+.definition-box {
+  background: linear-gradient(135deg, #4472c4 0%, #6295ef 100%);
+  border: 3px solid #3498db;
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin: 30px 0;
+  color: white;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Заголовок блока определения */
+.definition-box h3 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  text-align: center;
+  border: none;
+  padding: 0;
+  border-bottom: 2px solid rgba(52, 152, 219, 0.5);
+  padding-bottom: 10px;
+}
+
+/* Текст в блоке определения */
+.definition-box p {
+  color: #ffffff;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 1.15em;
+  line-height: 1.6;
+}
+
+/* Декоративный элемент для блока определения */
+/* .definition-box::before {
+  content: "📘";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3498db;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 3px solid white;
+} */
+
+/* Стили для списков */
+.article-container ul,
+.article-container ol {
+  margin: 25px 0;
+  padding-left: 35px;
+}
+
+.article-container li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #2c3e50;
+  font-size: 1.1em;
+}
+
+.article-container ul li::marker {
+  color: #3498db;
+  font-size: 1.2em;
+}
+
+.article-container ol li::marker {
+  color: #2a5298;
+  font-weight: bold;
+}
+
+/* Стили для выделенного текста */
+.article-container strong {
+  color: #2a5298;
+  font-weight: 700;
+  background: linear-gradient(transparent 60%, rgba(52, 152, 219, 0.2) 40%);
+  padding: 0 2px;
+}
+
+.article-container em {
+  color: #e74c3c;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Горизонтальная линия */
+.article-container hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3498db, transparent);
+  margin: 35px 0;
+}
+
+/* Блок с важной информацией */
+.info-box {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-left: 5px solid #2196f3;
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin: 25px 0;
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.1);
+}
+
+.info-box h4 {
+  color: #1976d2;
+  margin-top: 0;
+  border: none;
+  padding: 0;
+}
+
+.info-box p {
+  color: #1565c0;
+  margin-bottom: 0;
+}
+
+.article-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Базовые стили для всех картинок в статье */
+.article-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Обычная картинка по центру */
+.article-image {
+  margin: 25px auto;
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Картинка с подписью */
+.image-with-caption {
+  text-align: center;
+  margin: 30px auto;
+  max-width: 100%;
+}
+
+.image-with-caption img {
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 10px;
+  margin: 0 auto 10px auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.image-caption {
+  font-style: italic;
+  color: #000000;
+  font-size: 1em;
+  margin-top: 8px;
+  line-height: 1.4;
+  padding: 0 10px;
+}
+
+/* Картинка с обтеканием текста */
+.image-float-left {
+  float: left;
+  margin: 15px 25px 15px 0;
+  max-width: 45%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-float-right {
+  float: right;
+  margin: 15px 0 15px 25px;
+  max-width: 45%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Очистка обтекания */
+.clear-float {
+  clear: both;
+}
+
+/* Стили для групп картинок (галерея) */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.gallery-item {
+  flex: 1 1 calc(33.333% - 15px);
+  min-width: 200px;
+  text-align: center;
+}
+
+.gallery-item img {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Стили для картинок в блоках определения и информации */
+.definition-box img,
+.info-box img {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .article-container {
+    padding: 25px;
+    margin: 30px 0;
+  }
+
+  .article-container h2 {
+    font-size: 1.9em;
+  }
+
+  .article-container h3 {
+    font-size: 1.6em;
+  }
+
+  .article-container p {
+    font-size: 1.05em;
+    line-height: 1.6;
+  }
+
+  .definition-box {
+    padding: 20px;
+    margin: 25px 0;
+  }
+
+  .definition-box h3 {
+    font-size: 1.3em;
+  }
+
+  .definition-box p {
+    font-size: 1.05em;
+  }
+
+  .definition-box::before {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-container {
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 10px;
+  }
+
+  .article-container h2 {
+    font-size: 1.7em;
+  }
+
+  .article-container h3 {
+    font-size: 1.4em;
+  }
+
+  .article-container p {
+    font-size: 1em;
+    text-align: left;
+  }
+
+  .definition-box {
+    padding: 18px;
+  }
+
+  .definition-box::before {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    top: -15px;
+  }
+
+  .article-container ul,
+  .article-container ol {
+    padding-left: 25px;
+  }
+}
