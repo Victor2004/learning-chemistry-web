@@ -216,26 +216,6 @@ body {
   overflow: hidden; /* Чтобы ничего не выходило за границы кнопки */
 }
 
-.lesson-button::before {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: normal;
-  white-space: nowrap;
-  opacity: 0;
-  /* visibility: hidden; */
-  transition: all 0.3s ease;
-  z-index: 1000;
-  pointer-events: none;
-}
-
 .lesson-button::after {
   content: "";
   position: absolute;
@@ -349,7 +329,7 @@ body {
   padding: 15px 20px;
   margin-top: 10px;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  /* backdrop-filter: blur(10px); */
+  backdrop-filter: blur(10px);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;

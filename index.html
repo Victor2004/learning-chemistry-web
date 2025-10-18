@@ -29,20 +29,32 @@
         </button>
 
         <!-- Прогресс бар -->
-        <div class="progress-container">
-          <div class="progress-info">
-            <span>Прогресс: 2/12 уроков</span>
+        <div class="progress-wrapper">
+          <div
+            class="progress-container"
+            style="float: left; width: 48%; margin-right: 4%"
+          >
+            <div class="progress-info">
+              <span>Прогресс: 2/12 уроков</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
           </div>
-          <div class="progress-bar">
-            <div class="progress-fill"></div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Правая кнопка -->
-      <button class="header-button header-button-right">
-        <span class="button-text">Войти</span>
-      </button>
+          <div class="progress-container" style="float: left; width: auto">
+            <div class="progress-info">
+              <span>Хомячков: <br />36</span>
+            </div>
+          </div>
+          <div style="clear: both"></div>
+        </div>
+
+        <!-- Правая кнопка -->
+        <button class="header-button header-button-right">
+          <span class="button-text">Войти</span>
+        </button>
+      </div>
 
       <!-- Верхняя волна -->
       <div class="wave-container-top">
@@ -64,7 +76,7 @@
             <a
               href="https://victor2004.github.io/learning-chemistry-web/notes1.html"
               class="lesson-button lesson-completed"
-              data-tooltip="[Лекция] Урок 1: Химия – часть естествознания"
+              title="[Лекция] Урок 1: Химия – часть естествознания"
             >
               <img src="media/notes.png" class="lesson-icon" />
             </a>
@@ -75,8 +87,8 @@
             <div class="lesson-connector"></div>
             <a
               href="https://victor2004.github.io/learning-chemistry-web/"
-              class="lesson-button lesson-completed"
-              data-tooltip="[Тест] Урок 1: Химия – часть естествознания"
+              class="lesson-button lesson-current"
+              title="[Тест] Урок 1: Химия – часть естествознания"
             >
               <img src="media/lesson_test.png" class="lesson-icon" />
             </a>
@@ -87,10 +99,15 @@
             <div class="lesson-connector"></div>
             <a
               href="https://victor2004.github.io/learning-chemistry-web/"
-              class="lesson-button lesson-current"
-              data-tooltip="Химические реакции"
+              class="lesson-button lesson-locked"
+              title="Химические реакции"
             >
               <img src="media/notes.png" class="lesson-icon" />
+              <img
+                src="media/lock.png"
+                alt="Заблокировано"
+                class="lesson-lock-icon"
+              />
             </a>
           </div>
 
@@ -100,7 +117,7 @@
             <a
               href="https://victor2004.github.io/learning-chemistry-web/"
               class="lesson-button lesson-locked"
-              data-tooltip="Растворы"
+              title="Растворы"
             >
               <img src="media/lesson_test.png" class="lesson-icon" />
               <img
@@ -117,7 +134,7 @@
             <a
               href="https://victor2004.github.io/learning-chemistry-web/"
               class="lesson-button lesson-locked"
-              data-tooltip="Окисление"
+              title="Окисление"
             >
               <img src="media/notes.png" class="lesson-icon" />
               <img
@@ -134,7 +151,7 @@
             <a
               href="https://victor2004.github.io/learning-chemistry-web/"
               class="lesson-button lesson-locked"
-              data-tooltip="Периодическая таблица"
+              title="Периодическая таблица"
             >
               <img src="media/lesson_test.png" class="lesson-icon" />
               <img
@@ -151,7 +168,7 @@
             <a
               href="https://victor2004.github.io/learning-chemistry-web/"
               class="lesson-button lesson-locked"
-              data-tooltip="Периодическая таблица"
+              title="Периодическая таблица"
             >
               <img src="media/module_test.png" class="lesson-icon" />
               <img
