@@ -1,0 +1,254 @@
+/* Стили для модального окна */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  width: 1500px;
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-container {
+  transform: scale(1);
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #2a5298, #1e3c72);
+  color: white;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-content {
+  padding: 25px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Стили для таблицы Менделеева */
+.periodic-table-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.color-box.metal {
+  background: #ff9999;
+}
+
+.color-box.nonmetal {
+  background: #99ff99;
+}
+
+.color-box.metalloid {
+  background: #ffff99;
+}
+
+.color-box.unknown {
+  background: #cccccc;
+}
+
+.modal-footer {
+  padding: 20px 25px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  text-align: right;
+}
+
+.modal-button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.modal-button:hover {
+  background: linear-gradient(135deg, #2980b9, #3498db);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+/* Анимация появления */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-container {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .modal-container {
+    max-width: 95%;
+    width: 95%;
+    margin: 20px;
+  }
+
+  .modal-header {
+    padding: 15px 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.3em;
+  }
+
+  .modal-content {
+    padding: 15px;
+    max-height: 50vh;
+  }
+
+  .table-legend {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .modal-footer {
+    padding: 15px 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-header h2 {
+    font-size: 1.2em;
+  }
+
+  .modal-content {
+    padding: 10px;
+  }
+
+  .legend-item {
+    font-size: 0.8em;
+  }
+
+  .color-box {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Альтернативный вариант - таблица созданная через CSS */
+.periodic-table-css {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 2px;
+  margin: 20px 0;
+}
+
+.element {
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  border-radius: 4px;
+  padding: 5px;
+  text-align: center;
+  font-size: 0.7em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.element:hover {
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.element.symbol {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.element.number {
+  font-size: 0.6em;
+  color: #666;
+}
