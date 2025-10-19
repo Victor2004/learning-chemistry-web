@@ -84,25 +84,6 @@
   line-height: 1.6;
 }
 
-/* Декоративный элемент для блока определения */
-/* .definition-box::before {
-  content: "📘";
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #3498db;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  border: 3px solid white;
-} */
-
 /* Стили для списков */
 .article-container ul,
 .article-container ol {
@@ -169,12 +150,6 @@
 .info-box p {
   color: #1565c0;
   margin-bottom: 0;
-}
-
-.article-container img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 /* Базовые стили для всех картинок в статье */
@@ -273,6 +248,89 @@
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для навигации под статьей */
+.article-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+/* Стили для кнопок навигации */
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border: 2px solid #3498db;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  text-decoration: none;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.nav-button:hover {
+  background: linear-gradient(135deg, #2980b9, #3498db);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.nav-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(52, 152, 219, 0.3);
+}
+
+/* Специфичные стили для кнопки "Назад" */
+.nav-prev {
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  border-color: #95a5a6;
+  box-shadow: 0 4px 15px rgba(149, 165, 166, 0.3);
+}
+
+.nav-prev:hover {
+  background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+  box-shadow: 0 6px 20px rgba(149, 165, 166, 0.4);
+}
+
+/* Стрелки */
+.nav-arrow {
+  font-size: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.nav-prev:hover .nav-arrow {
+  transform: translateX(-3px);
+}
+
+.nav-next:hover .nav-arrow {
+  transform: translateX(3px);
+}
+
+/* Текст в кнопках */
+.nav-text {
+  white-space: nowrap;
+}
+
+/* Центральный заголовок */
+.nav-title {
+  flex: 1;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 15px;
 }
 
 @media (max-width: 768px) {
