@@ -323,6 +323,11 @@ body {
   display: none;
 }
 
+.progress-wrapper {
+  display: flex;
+  flex-wrap: nowrap; /* Запрещаем перенос на новую строку */
+}
+
 .progress-container {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
