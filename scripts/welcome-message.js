@@ -122,10 +122,17 @@ class WelcomeMessage {
   }
 }
 
-// Инициализация при загрузке страницы
+let welcomeMessage;
 document.addEventListener("DOMContentLoaded", function () {
-  const welcomeMessage = new WelcomeMessage();
+  // Существующий код инициализации welcomeMessage
+  welcomeMessage = new WelcomeMessage();
 
-  // Для тестирования: раскомментируйте строку ниже чтобы сбросить и показать снова
-  // welcomeMessage.reset();
+  // Добавляем обработчик для кнопки помощи
+  const helpTrigger = document.getElementById("helpTrigger");
+  if (helpTrigger) {
+    helpTrigger.addEventListener("click", function () {
+      welcomeMessage.reset();
+      location.reload();
+    });
+  }
 });
