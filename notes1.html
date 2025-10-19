@@ -51,6 +51,12 @@
     </header>
 
     <div class="container" style="max-width: 1600px">
+      <div class="video-lesson-header">
+        <button class="video-lesson-btn" id="openVideoLesson">
+          <img src="media/video.png" alt="Видео" class="video-icon" />
+          <span class="video-text">Видео урок</span>
+        </button>
+      </div>
       <div class="article-container">
         <h2>Вспомним!</h2>
 
@@ -161,6 +167,65 @@
 
         <div class="modal-footer">
           <button class="modal-button" id="closeModalBtn">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно видео урока -->
+    <div class="modal-overlay" id="videoLessonModal">
+      <div class="modal-container video-modal">
+        <div class="modal-header">
+          <h2>Видео урок: Основы химии</h2>
+          <button class="modal-close" id="closeVideoLesson">&times;</button>
+        </div>
+
+        <div class="modal-content video-content">
+          <div class="video-player">
+            <!-- Здесь можно вставить YouTube, Vimeo или любое другое видео -->
+            <iframe
+              width="100%"
+              height="400"
+              src="https://player.vimeo.com/video/630281422?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+
+          <!-- <div class="video-description">
+            <h3>Описание урока</h3>
+            <p>
+              В этом видео мы рассмотрим основные понятия химии: атомы, молекулы
+              и химические реакции. Узнаем, как происходят химические
+              превращения и какие законы ими управляют.
+            </p>
+
+            <div class="video-info">
+              <div class="info-item">
+                <span class="info-label">Длительность:</span>
+                <span class="info-value">15:30</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Сложность:</span>
+                <span class="info-value">Начальная</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Темы:</span>
+                <span class="info-value">Атомы, Молекулы, Реакции</span>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="modal-footer">
+          <button class="modal-button secondary" id="videoCloseBtn">
+            Закрыть
+          </button>
+          <!-- <button class="modal-button primary" id="videoNextBtn">
+            Следующее видео
+          </button> -->
         </div>
       </div>
     </div>

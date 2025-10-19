@@ -333,6 +333,58 @@
   padding: 0 15px;
 }
 
+/* Стили для кнопки видео урока */
+.video-lesson-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.video-lesson-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #ffe563, #ffdb28);
+  border: 2px solid #ffc800;
+  border-radius: 25px;
+  color: #3e3e3e;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px #ffc8004d;
+  text-decoration: none;
+}
+
+.video-lesson-btn:hover {
+  background: linear-gradient(135deg, #ffdb28, #ffe563);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px #ffc8004d;
+}
+
+.video-lesson-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px #ffc8004d;
+}
+
+/* Стили для иконки-картинки */
+.video-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.video-lesson-btn:hover .video-icon {
+  transform: scale(1.1);
+}
+
+.video-text {
+  white-space: nowrap;
+}
+
 @media (max-width: 768px) {
   .article-container {
     padding: 25px;
@@ -370,6 +422,21 @@
     height: 35px;
     font-size: 16px;
   }
+
+  .video-lesson-header {
+    /* justify-content: center; */
+    margin-bottom: 15px;
+  }
+
+  .video-lesson-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .video-icon {
+    width: 38px;
+    height: 38px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -406,5 +473,15 @@
   .article-container ul,
   .article-container ol {
     padding-left: 25px;
+  }
+
+  .video-lesson-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .video-icon {
+    width: 30px;
+    height: 30px;
   }
 }

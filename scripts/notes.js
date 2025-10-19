@@ -41,3 +41,70 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Функции для работы с модальным окном видео урока
+document.addEventListener("DOMContentLoaded", function () {
+  const videoOpenButton = document.getElementById("openVideoLesson");
+  const videoCloseButton = document.getElementById("closeVideoLesson");
+  const videoCloseBtn = document.getElementById("videoCloseBtn");
+  const videoNextBtn = document.getElementById("videoNextBtn");
+  const videoModal = document.getElementById("videoLessonModal");
+
+  // Открытие модального окна с видео
+  if (videoOpenButton) {
+    videoOpenButton.addEventListener("click", function () {
+      videoModal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  }
+
+  // Закрытие модального окна с видео
+  function closeVideoModal() {
+    videoModal.classList.remove("active");
+    document.body.style.overflow = "";
+
+    // Останавливаем видео при закрытии
+    const iframe = videoModal.querySelector("iframe");
+    if (iframe) {
+      const iframeSrc = iframe.src;
+      iframe.src = iframeSrc; // Перезагружаем iframe чтобы остановить видео
+    }
+
+    const video = videoModal.querySelector("video");
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  }
+
+  if (videoCloseButton) {
+    videoCloseButton.addEventListener("click", closeVideoModal);
+  }
+
+  if (videoCloseBtn) {
+    videoCloseBtn.addEventListener("click", closeVideoModal);
+  }
+
+  // Кнопка "Следующее видео" (можно добавить функционал)
+  if (videoNextBtn) {
+    videoNextBtn.addEventListener("click", function () {
+      // Здесь можно добавить логику переключения на следующее видео
+      alert("Переход к следующему видео!");
+      // closeVideoModal(); // или закрыть текущее и открыть следующее
+    });
+  }
+
+  // Закрытие по клику на оверлей
+  videoModal.addEventListener("click", function (e) {
+    if (e.target === videoModal) {
+      closeVideoModal();
+    }
+  });
+
+  // Закрытие по клавише Escape
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && videoModal.classList.contains("active")) {
+      closeVideoModal();
+    }
+  });
+});

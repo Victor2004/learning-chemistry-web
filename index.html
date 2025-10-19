@@ -18,6 +18,7 @@
     />
 
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/welcome-message.css" />
   </head>
 
   <body>
@@ -86,7 +87,7 @@
           <div class="lesson-item">
             <div class="lesson-connector"></div>
             <a
-              href="https://victor2004.github.io/learning-chemistry-web/"
+              href="https://victor2004.github.io/learning-chemistry-web/test1.html"
               class="lesson-button lesson-current"
               title="[Тест] Урок 1: Химия – часть естествознания"
             >
@@ -180,8 +181,45 @@
           </div>
         </div>
       </div>
+
+      <!-- Окна -->
+      <!-- Приветственное модальное окно -->
+      <div class="welcome-modal" id="welcomeModal">
+        <div class="welcome-container">
+          <!-- Облачко с текстом -->
+          <div class="speech-bubble" id="speechBubble">
+            <div class="bubble-text" id="bubbleText"></div>
+            <div class="bubble-arrow"></div>
+          </div>
+
+          <!-- Хомяк -->
+          <div class="hamster-character">
+            <img
+              src="media/hamster.png"
+              alt="Хомяк-помощник"
+              class="hamster-image"
+            />
+          </div>
+
+          <!-- Индикатор прогресса (точки) -->
+          <div class="welcome-progress">
+            <span class="progress-dot active" data-index="0"></span>
+            <span class="progress-dot" data-index="1"></span>
+            <span class="progress-dot" data-index="2"></span>
+            <span class="progress-dot" data-index="3"></span>
+            <span class="progress-dot" data-index="4"></span>
+            <span class="progress-dot" data-index="5"></span>
+            <span class="progress-dot" data-index="6"></span>
+            <span class="progress-dot" data-index="7"></span>
+          </div>
+
+          <!-- Подсказка для пользователя -->
+          <div class="welcome-hint">Нажми чтобы продолжить</div>
+        </div>
+      </div>
     </div>
 
     <script src="scripts/main.js"></script>
+    <script src="scripts/welcome-message.js"></script>
   </body>
 </html>

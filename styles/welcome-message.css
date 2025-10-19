@@ -1,0 +1,233 @@
+/* Стили для приветственного модального окна */
+.welcome-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.709);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.welcome-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.welcome-container {
+  position: relative;
+  text-align: center;
+  max-width: 500px;
+  padding: 40px;
+}
+
+/* Стили для облачка с текстом */
+.speech-bubble {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  /* animation: bounce 2s infinite alternate; */
+}
+
+.speech-bubble::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 15px solid transparent;
+  border-top-color: white;
+}
+
+.bubble-text {
+  font-size: 1.3em;
+  color: #2c3e50;
+  line-height: 1.5;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Анимация появления текста */
+@keyframes textAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bubble-text {
+  animation: textAppear 0.5s ease-out;
+}
+
+/* Анимация подпрыгивания облачка */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Стили для хомяка */
+.hamster-character {
+  margin: 20px 0;
+}
+
+.hamster-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ffc800;
+  box-shadow: 0 8px 25px #ffc8004d;
+  animation: hamsterFloat 3s ease-in-out infinite;
+}
+
+/* Анимация плавающего хомяка */
+@keyframes hamsterFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Индикатор прогресса */
+.welcome-progress {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.progress-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.progress-dot.active {
+  background: #ffc800;
+  transform: scale(1.2);
+}
+
+.progress-dot:hover {
+  background: rgba(255, 200, 0, 0.7);
+}
+
+/* Подсказка для пользователя */
+.welcome-hint {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 20px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .welcome-container {
+    max-width: 90%;
+    padding: 30px 20px;
+  }
+
+  .speech-bubble {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+
+  .bubble-text {
+    font-size: 1.1em;
+  }
+
+  .hamster-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .welcome-progress {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-container {
+    padding: 20px 15px;
+  }
+
+  .speech-bubble {
+    padding: 15px;
+    margin-bottom: 25px;
+  }
+
+  .bubble-text {
+    font-size: 1em;
+  }
+
+  .hamster-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .progress-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .welcome-hint {
+    font-size: 0.8em;
+  }
+}
+
+/* Альтернативный вариант облачка с хвостиком слева */
+.speech-bubble.left-tail {
+  margin-left: 50px;
+}
+
+.speech-bubble.left-tail::before {
+  left: 30px;
+  transform: none;
+}
+
+/* Вариант с несколькими хомяками */
+.hamster-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.hamster-group .hamster-image {
+  width: 100px;
+  height: 100px;
+}
