@@ -241,8 +241,18 @@ function showResults() {
 
 // Инициализация при загрузке страницы
 document.addEventListener("DOMContentLoaded", function () {
-  // Загружаем тест с ID "test1"
-  loadTest("test1");
+  // Получаем ID теста из хэша URL (например, /test.html#1)
+  function getTestIdFromHash() {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith("#")) {
+      return hash.substring(1); // Убираем символ # и возвращаем ID
+    }
+    return "0"; // Значение по умолчанию, если хэш отсутствует
+  }
+
+  // Загружаем тест с ID из хэша URL
+  const testId = getTestIdFromHash();
+  loadTest(testId);
 
   // Код для открытия/закрытия таблицы Менделеева
   const periodicTableModal = document.getElementById("periodicTableModal");
