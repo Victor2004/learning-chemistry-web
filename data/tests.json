@@ -1,0 +1,72 @@
+{
+  "tests": [
+    {
+      "id": "test1",
+      "title": "[Тест] Урок 1: Химия – часть естествознания",
+      "questions": [
+        {
+          "type": "text",
+          "text": "Что изучает химия?",
+          "image": null,
+          "answers": [
+            "Вещества и их свойства",
+            "Живые организмы",
+            "Землю",
+            "Космос"
+          ],
+          "correctAnswer": 0,
+          "explanation": "Химия изучает вещества, их состав, строение, свойства и превращения."
+        },
+        {
+          "type": "text_with_gap",
+          "text": "Метод изучения, который проводят в строго контролируемых условиях, называют ______.",
+          "image": null,
+          "answers": ["эксперимент", "наблюдение", "моделирование", "анализ"],
+          "correctAnswer": 0,
+          "explanation": "Эксперимент - это исследование, проводимое в строго контролируемых условиях."
+        },
+        {
+          "type": "image_choice",
+          "text": "Какая из этих моделей представляет молекулу воды?",
+          "image": null,
+          "answers": [
+            {
+              "text": "Вариант A",
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/lesson1/img1.png"
+            },
+            {
+              "text": "Вариант B",
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.png"
+            },
+            {
+              "text": "Вариант C",
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/lesson1/img1.png"
+            },
+            {
+              "text": "Вариант D",
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.png"
+            }
+          ],
+          "correctAnswer": 0,
+          "explanation": "Модель A показывает правильное строение молекулы воды H₂O."
+        },
+        {
+          "type": "text",
+          "text": "Какой метод познания используется для изучения объектов, которые невозможно наблюдать напрямую?",
+          "image": null,
+          "answers": ["Моделирование", "Эксперимент", "Наблюдение", "Анализ"],
+          "correctAnswer": 0,
+          "explanation": "Моделирование позволяет изучать объекты через их модели-аналоги."
+        },
+        {
+          "type": "text_with_gap",
+          "text": "Обширная область знаний, которая изучает естественные явления и процессы, происходящие в окружающей природе, называется ______.",
+          "image": null,
+          "answers": ["естествознание", "химия", "физика", "биология"],
+          "correctAnswer": 0,
+          "explanation": "Естествознание - это общая наука о природных явлениях и процессах."
+        }
+      ]
+    }
+  ]
+}

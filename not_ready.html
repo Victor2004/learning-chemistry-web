@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[not ready]</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://victor2004.github.io/learning-chemistry-web/favicon.ico"
+    />
+
+    <meta property="og:title" content="Изучение химии в игровой форме" />
+    <meta property="og:description" content="Изучение химии в игровой форме" />
+    <meta
+      property="og:url"
+      content="https://victor2004.github.io/learning-chemistry-web/"
+    />
+
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/notes.css" />
+    <link rel="stylesheet" href="styles/periodictable.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <!-- Левая кнопка -->
+        <button class="header-button header-button-left">
+          <span class="button-text">Меню</span>
+        </button>
+
+        <!-- Правая кнопка -->
+        <button
+          id="openPeriodicTable"
+          class="header-button header-button-right"
+        >
+          <span class="button-text">Справочник</span>
+        </button>
+      </div>
+
+      <!-- Верхняя волна -->
+      <div class="wave-container-top">
+        <div class="rainbow-wave"></div>
+      </div>
+
+      <!-- Нижняя волна -->
+      <div class="wave-container-bottom">
+        <div class="rainbow-wave"></div>
+      </div>
+    </header>
+
+    <div class="container" style="max-width: 1600px">
+      <!-- 
+      Основной контейнер
+      -->
+      <div class="article-container">
+        <div
+          class="article-image"
+          style="max-width: 700px; box-shadow: 0 0px 0px"
+        >
+          <img
+            src="https://victor2004.github.io/learning-chemistry-web/media/underConstruction.png"
+          />
+        </div>
+      </div>
+
+      <!-- Навигационные стрелки -->
+      <div class="article-navigation">
+        <a
+          href="https://victor2004.github.io/learning-chemistry-web/notes1"
+          class="nav-button nav-prev"
+        >
+          <span class="nav-arrow">⬅️</span>
+          <span class="nav-text">Назад</span>
+        </a>
+
+        <a
+          href="https://victor2004.github.io/learning-chemistry-web/"
+          class="nav-button nav-next"
+        >
+          <span class="nav-text">Вперед</span>
+          <span class="nav-arrow">➡️</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Окна -->
+    <!-- Модальное окно таблицы Менделеева -->
+    <div class="modal-overlay" id="periodicTableModal">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2>Периодическая таблица Менделеева</h2>
+          <button class="modal-close" id="closePeriodicTable">&times;</button>
+        </div>
+
+        <div class="modal-content">
+          <div class="periodic-table">
+            <!-- Здесь будет таблица Менделеева -->
+            <div class="table-container">
+              <img
+                src="media/periodic-table.jpg"
+                alt="Периодическая таблица Менделеева"
+                class="periodic-table-image"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="modal-button" id="closeModalBtn">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts/notes.js"></script>
+  </body>
+</html>

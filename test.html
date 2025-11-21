@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[Лекция] Урок 1: Химия – часть естествознания</title>
+    <title>Загрузка теста...</title>
     <link
       rel="icon"
       type="image/x-icon"
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/notes.css" />
     <link rel="stylesheet" href="styles/periodictable.css" />
+    <link rel="stylesheet" href="styles/test.css" />
   </head>
 
   <body>
@@ -51,37 +52,35 @@
     </header>
 
     <div class="container" style="max-width: 1600px">
-      <div class="article-container">
-        <h3>Здесь будет Тест 1</h3>
-
-        <div
-          class="article-image"
-          style="max-width: 700px; box-shadow: 0 0px 0px"
-        >
-          <img
-            src="https://victor2004.github.io/learning-chemistry-web/media/underConstruction.png"
-          />
+      <!-- Контейнер теста -->
+      <div class="test-container">
+        <div id="testContent">
+          <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <p>Загрузка теста...</p>
+          </div>
         </div>
       </div>
 
       <!-- Навигационные стрелки -->
-      <div class="article-navigation">
+      <!-- Временно скрыты -->
+      <!-- <div class="article-navigation">
         <a
-          href="https://victor2004.github.io/learning-chemistry-web/notes1"
+          href="https://victor2004.github.io/learning-chemistry-web/notes1.html"
           class="nav-button nav-prev"
         >
           <span class="nav-arrow">⬅️</span>
-          <span class="nav-text">Назад</span>
+          <span class="nav-text">Назад к лекции</span>
         </a>
 
         <a
           href="https://victor2004.github.io/learning-chemistry-web/"
           class="nav-button nav-next"
         >
-          <span class="nav-text">Вперед</span>
+          <span class="nav-text">Вперед к следующему уроку</span>
           <span class="nav-arrow">➡️</span>
         </a>
-      </div>
+      </div> -->
     </div>
 
     <!-- Окна -->
@@ -112,6 +111,6 @@
       </div>
     </div>
 
-    <script src="scripts/notes.js"></script>
+    <script src="scripts/test.js"></script>
   </body>
 </html>
