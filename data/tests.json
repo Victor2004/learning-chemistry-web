@@ -1,20 +1,6 @@
 {
   "tests": [
     {
-      "id": "0",
-      "title": "[ОШИБКА] Выбран не существующий тест!",
-      "questions": [
-        {
-          "type": "text",
-          "text": "ОШИБКА",
-          "image": null,
-          "answers": ["ОШИБКА"],
-          "correctAnswer": 0,
-          "explanation": "ОШИБКА!!!"
-        }
-      ]
-    },
-    {
       "id": "1",
       "title": "[Тест] Урок 1: Химия – часть естествознания",
       "questions": [

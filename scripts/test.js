@@ -8,13 +8,16 @@ let testCompleted = false;
 async function loadTest(testId) {
   try {
     const response = await fetch("data/tests.json");
+    if (!response.ok) {
+      throw new Error("Не удалось загрузить файл с тестами");
+    }
     const data = await response.json();
 
     // Находим нужный тест
     currentTest = data.tests.find((test) => test.id === testId);
 
     if (!currentTest) {
-      throw new Error(`Тест с ID "${testId}" не найден`);
+      throw new Error(`Тест "${testId}" не найден`);
     }
 
     // Обновляем заголовки страницы
@@ -27,12 +30,9 @@ async function loadTest(testId) {
     displayTest();
   } catch (error) {
     console.error("Ошибка загрузки теста:", error);
-    document.getElementById("testContent").innerHTML = `
-      <div class="loading-container">
-        <p>Ошибка загрузки теста: ${error.message}</p>
-        <button class="test-button" onclick="location.reload()">Попробовать снова</button>
-      </div>
-    `;
+
+    // Если произошла ошибка, показываем страницу с хэшем 0
+    showErrorPage(error);
   }
 }
 
@@ -251,8 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Загружаем тест с ID из хэша URL
-  const testId = getTestIdFromHash();
-  loadTest(testId);
+  loadTest(getTestIdFromHash());
 
   // Код для открытия/закрытия таблицы Менделеева
   const periodicTableModal = document.getElementById("periodicTableModal");
@@ -285,3 +284,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Функция для отображения страницы ошибки (хэш 0)
+function showErrorPage(error) {
+  document.getElementById("testContent").innerHTML = `
+    <div class="test-header">
+      <h2 class="test-title">Тест не найден</h2>
+    </div>
+    <div class="results-container">
+      <h2 class="results-title">Ошибка загрузки теста</h2>
+      <div class="results-message">
+        <p>${error.message}</p>
+        <p>Возможно, тест с указанным ID не существует или произошла ошибка загрузки.</p>
+      </div>
+      <div class="test-controls">
+        <button class="test-button" onclick="location.reload()">Попробовать снова</button>
+        <button class="test-button" onclick="location.href='index.html'">На главную</button>
+      </div>
+    </div>
+  `;
+}
