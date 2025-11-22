@@ -51,7 +51,7 @@ function displayTest() {
     </div>
 
     <div class="test-controls">
-      <button id="prevButton" class="test-button" disabled>Назад</button>
+      <!-- <button id="prevButton" class="test-button" disabled>Назад</button> -->
       <button id="nextButton" class="test-button">Далее</button>
     </div>
   `;
@@ -151,10 +151,10 @@ function displayQuestion(index) {
   });
 
   // Обновляем состояние кнопок навигации
-  const prevButton = document.getElementById("prevButton");
+  // const prevButton = document.getElementById("prevButton");
   const nextButton = document.getElementById("nextButton");
 
-  prevButton.disabled = index === 0;
+  // prevButton.disabled = index === 0;
 
   // Если это последний вопрос, меняем текст кнопки
   if (index === currentTest.questions.length - 1) {
@@ -169,15 +169,15 @@ function displayQuestion(index) {
 
 // Настройка обработчиков событий
 function setupEventListeners() {
-  const prevButton = document.getElementById("prevButton");
+  // const prevButton = document.getElementById("prevButton");
   const nextButton = document.getElementById("nextButton");
 
-  prevButton.addEventListener("click", function () {
-    if (currentQuestionIndex > 0) {
-      currentQuestionIndex--;
-      displayQuestion(currentQuestionIndex);
-    }
-  });
+  // prevButton.addEventListener("click", function () {
+  //   if (currentQuestionIndex > 0) {
+  //     currentQuestionIndex--;
+  //     displayQuestion(currentQuestionIndex);
+  //   }
+  // });
 
   nextButton.addEventListener("click", function () {
     if (currentQuestionIndex < currentTest.questions.length - 1) {
