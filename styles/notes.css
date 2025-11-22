@@ -310,13 +310,19 @@
   transition: transform 0.3s ease;
 }
 
-.nav-prev:hover .nav-arrow {
+.nav-arrow-img {
+  width: 22px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* .nav-prev:hover .nav-arrow {
   transform: translateX(-3px);
 }
 
 .nav-next:hover .nav-arrow {
   transform: translateX(3px);
-}
+} */
 
 /* Текст в кнопках */
 .nav-text {
