@@ -97,64 +97,6 @@ body {
   font-size: 19px;
 }
 
-/* Контейнер для верхней волны */
-.wave-container-top {
-  position: absolute;
-  bottom: 0%;
-  left: 0%;
-  width: 100%;
-  height: 52px;
-  z-index: 3;
-}
-
-/* Контейнер для нижней волны */
-.wave-container-bottom {
-  position: absolute;
-  top: 100px;
-  left: 0;
-  width: 100%;
-  height: 52px;
-  z-index: 3;
-  transform: rotate(180deg);
-}
-
-.rainbow-wave {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    #ff5656 0%,
-    #ff9e3d 16.66%,
-    #ffff3e 33.33%,
-    #3eff3e 50%,
-    #3838ff 66.66%,
-    #591788 83.33%,
-    #9f34cd 100%
-  );
-  /* Волна с подъемами и спадами */
-  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,96 C150,24 300,168 450,96 C600,24 750,168 900,96 C1050,24 1200,168 1200,168 L1200,120 L0,120 Z" fill="white"/></svg>');
-  mask-size: 1200px 100%;
-  mask-repeat: repeat-x;
-  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,96 C150,24 300,168 450,96 C600,24 750,168 900,96 C1050,24 1200,168 1200,168 L1200,120 L0,120 Z" fill="white"/></svg>');
-  -webkit-mask-size: 100px 100%;
-  -webkit-mask-repeat: repeat-x;
-}
-
-/* Для верхней волны немного смещаем градиент для красоты */
-.wave-container-top .rainbow-wave {
-  background: linear-gradient(
-    90deg,
-    #9400d3 0%,
-    #4b0082 16.66%,
-    #0000ff 33.33%,
-    #00ff00 50%,
-    #ffff00 66.66%,
-    #ff7f00 83.33%,
-    #ff0000 100%
-  );
-}
-
 .header-content h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
