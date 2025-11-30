@@ -52,6 +52,20 @@ body {
   padding: 0;
 }
 
+/* Кастомное выделение текста */
+::selection {
+  background-color: var(--primary-lighter); /* Фиолетовый фон выделения */
+  color: var(--text-light); /* Белый текст */
+  text-shadow: none;
+}
+
+/* Для Firefox */
+::-moz-selection {
+  background-color: var(--primary-lighter);
+  color: var(--text-light);
+  text-shadow: none;
+}
+
 .container {
   max-width: 600px;
   margin: 0 auto;
