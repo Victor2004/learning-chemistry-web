@@ -1,10 +1,55 @@
+:root {
+  /* Основная фиолетовая палитра */
+  --primary-dark: #5a2d82;
+  --primary-main: #7030a0;
+  --primary-light: #8a4db8;
+  --primary-lighter: #a78bfa;
+  --primary-lightest: #d4c0db;
+
+  /* Акцентные цвета */
+  --accent-main: #ffc800;
+  --accent-hover: #ffb20c;
+  --accent-dark: #e6b400;
+
+  /* Дополнительные цвета */
+  --success: #58cc02;
+  --success-dark: #4bb302;
+  --error: #ff4b4b;
+  --warning: #ffc800;
+  --info: #3498db;
+
+  /* Нейтральные цвета */
+  --text-dark: #2c3e50;
+  --text-light: #ffffff;
+  --gray-light: #e5e5e5;
+  --gray-medium: #999;
+  --gray-dark: #5d6d7e;
+
+  /* Градиенты */
+  --gradient-primary: linear-gradient(
+    180deg,
+    var(--primary-lightest),
+    var(--primary-main)
+  );
+  --gradient-accent: linear-gradient(
+    135deg,
+    var(--accent-main),
+    var(--accent-dark)
+  );
+  --gradient-button: linear-gradient(
+    135deg,
+    var(--primary-main),
+    var(--primary-dark)
+  );
+}
+
 /* Стили для тестовой системы */
 .test-container {
   position: relative;
   margin: 40px 0;
   min-height: auto;
   z-index: 1;
-  background: #ffffff9f;
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 15px;
   padding: 40px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -18,18 +63,18 @@
   align-items: center;
   margin-bottom: 30px;
   padding-bottom: 15px;
-  border-bottom: 2px solid #3498db;
+  border-bottom: 2px solid var(--primary-main);
 }
 
 .test-title {
   font-size: 2em;
-  color: #2c3e50;
+  color: var(--primary-dark);
   font-weight: 700;
 }
 
 .test-progress {
   font-size: 1.2em;
-  color: #5d6d7e;
+  color: var(--gray-dark);
   font-weight: 500;
 }
 
@@ -39,7 +84,7 @@
 
 .question-text {
   font-size: 1.4em;
-  color: #2c3e50;
+  color: var(--text-dark);
   margin-bottom: 25px;
   line-height: 1.5;
 }
@@ -68,29 +113,29 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 1.1em;
-  color: #2c3e50;
+  color: var(--text-dark);
 }
 
 .answer-option:hover {
   background: #e9ecef;
-  border-color: #3498db;
+  border-color: var(--primary-light);
 }
 
 .answer-option.selected {
-  background: #3498db;
-  color: white;
-  border-color: #2980b9;
+  background: var(--primary-light);
+  color: var(--text-light);
+  border-color: var(--primary-main);
 }
 
 .answer-option.correct {
-  background: #58cc02;
-  color: white;
-  border-color: #4bb302;
+  background: var(--success);
+  color: var(--text-light);
+  border-color: var(--success-dark);
 }
 
 .answer-option.incorrect {
-  background: #ff4b4b;
-  color: white;
+  background: var(--error);
+  color: var(--text-light);
   border-color: #e04444;
 }
 
@@ -123,14 +168,14 @@
 
 .blank-word {
   font-weight: bold;
-  color: #3498db;
+  color: var(--primary-main);
   text-decoration: underline;
-  text-decoration-color: #3498db;
+  text-decoration-color: var(--primary-main);
 }
 
 .blank-input {
   padding: 8px 12px;
-  border: 2px solid #3498db;
+  border: 2px solid var(--primary-main);
   border-radius: 5px;
   font-size: 1.1em;
   min-width: 150px;
@@ -145,26 +190,26 @@
 
 .test-button {
   padding: 12px 25px;
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  border: 2px solid #3498db;
+  background: var(--gradient-button);
+  border: 2px solid var(--primary-main);
   border-radius: 25px;
-  color: white;
+  color: var(--text-light);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 15px rgba(112, 48, 160, 0.3);
 }
 
 .test-button:hover {
-  background: linear-gradient(135deg, #2980b9, #3498db);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-main));
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+  box-shadow: 0 6px 20px rgba(112, 48, 160, 0.4);
 }
 
 .test-button:disabled {
-  background: #95a5a6;
-  border-color: #7f8c8d;
+  background: var(--gray-medium);
+  border-color: var(--gray-dark);
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
@@ -197,19 +242,19 @@
 
 .results-title {
   font-size: 2em;
-  color: #2c3e50;
+  color: var(--primary-dark);
   margin-bottom: 20px;
 }
 
 .results-score {
   font-size: 3em;
-  color: #3498db;
+  color: var(--primary-main);
   margin: 20px 0;
 }
 
 .results-message {
   font-size: 1.2em;
-  color: #5d6d7e;
+  color: var(--gray-dark);
   margin-bottom: 30px;
 }
 
@@ -220,7 +265,7 @@
 
 .loading-spinner {
   border: 5px solid #f3f3f3;
-  border-top: 5px solid #3498db;
+  border-top: 5px solid var(--primary-main);
   border-radius: 50%;
   width: 50px;
   height: 50px;

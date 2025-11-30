@@ -1,10 +1,70 @@
+:root {
+  /* Основная фиолетовая палитра */
+  --primary-dark: #5a2d82;
+  --primary-main: #7030a0;
+  --primary-light: #8a4db8;
+  --primary-lighter: #a78bfa;
+  --primary-lightest: #d4c0db;
+
+  /* Акцентные цвета */
+  --accent-main: #ffc800;
+  --accent-hover: #ffb20c;
+  --accent-dark: #e6b400;
+
+  /* Дополнительные цвета */
+  --success: #58cc02;
+  --success-dark: #4bb302;
+  --error: #ff4b4b;
+  --warning: #ffc800;
+  --info: #3498db;
+
+  /* Нейтральные цвета */
+  --text-dark: #2c3e50;
+  --text-light: #ffffff;
+  --gray-light: #e5e5e5;
+  --gray-medium: #999;
+  --gray-dark: #5d6d7e;
+
+  /* Цвета навигации */
+  --nav-accent-dark: #fd7e14;
+  --nav-accent-light: #ff922b;
+  --nav-gradient: linear-gradient(
+    135deg,
+    var(--nav-accent-dark),
+    var(--nav-accent-light)
+  );
+  --nav-gradient-hover: linear-gradient(
+    135deg,
+    var(--nav-accent-light),
+    var(--nav-accent-dark)
+  );
+
+  /* Градиенты */
+  --gradient-primary: linear-gradient(
+    180deg,
+    var(--primary-lightest),
+    var(--primary-main)
+  );
+  --gradient-accent: linear-gradient(
+    135deg,
+    var(--accent-main),
+    var(--accent-dark)
+  );
+  --gradient-definition: linear-gradient(
+    135deg,
+    var(--primary-light),
+    var(--primary-main)
+  );
+  --gradient-info: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
 /* Стили для контейнера статьи */
 .article-container {
   position: relative;
   margin: 40px 0;
   min-height: auto;
   z-index: 1;
-  background: #ffffff9f;
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 15px;
   padding: 40px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -15,27 +75,27 @@
 /* Стили для заголовков статьи */
 .article-container h2 {
   font-size: 2.2em;
-  color: #2c3e50;
+  color: var(--primary-dark);
   margin-bottom: 25px;
   text-align: center;
   font-weight: 700;
-  border-bottom: 3px solid #3498db;
+  border-bottom: 3px solid var(--primary-main);
   padding-bottom: 15px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .article-container h3 {
   font-size: 1.8em;
-  color: #2980b9;
+  color: var(--primary-main);
   margin: 30px 0 18px 0;
   font-weight: 600;
   padding-left: 15px;
-  border-left: 4px solid #3498db;
+  border-left: 4px solid var(--primary-light);
 }
 
 .article-container h4 {
   font-size: 1.4em;
-  color: #5d6d7e;
+  color: var(--gray-dark);
   margin: 25px 0 15px 0;
   font-weight: 500;
 }
@@ -44,7 +104,7 @@
 .article-container p {
   font-size: 1.15em;
   line-height: 1.7;
-  color: #2c3e50;
+  color: var(--text-dark);
   margin-bottom: 20px;
   text-align: justify;
   font-family: "Arial", sans-serif;
@@ -52,32 +112,32 @@
 
 /* Стили для блока определения */
 .definition-box {
-  background: linear-gradient(135deg, #4472c4 0%, #6295ef 100%);
-  border: 3px solid #3498db;
+  background: var(--gradient-definition);
+  border: 3px solid var(--primary-light);
   border-radius: 12px;
   padding: 25px 30px;
   margin: 30px 0;
-  color: white;
+  color: var(--text-light);
   position: relative;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Заголовок блока определения */
 .definition-box h3 {
-  color: #fff;
+  color: var(--text-light);
   margin-top: 0;
   margin-bottom: 15px;
   font-size: 1.5em;
   text-align: center;
   border: none;
   padding: 0;
-  border-bottom: 2px solid rgba(52, 152, 219, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
   padding-bottom: 10px;
 }
 
 /* Текст в блоке определения */
 .definition-box p {
-  color: #ffffff;
+  color: var(--text-light);
   margin-bottom: 0;
   text-align: center;
   font-size: 1.15em;
@@ -94,30 +154,30 @@
 .article-container li {
   margin-bottom: 12px;
   line-height: 1.6;
-  color: #2c3e50;
+  color: var(--text-dark);
   font-size: 1.1em;
 }
 
 .article-container ul li::marker {
-  color: #3498db;
+  color: var(--primary-main);
   font-size: 1.2em;
 }
 
 .article-container ol li::marker {
-  color: #2a5298;
+  color: var(--primary-dark);
   font-weight: bold;
 }
 
 /* Стили для выделенного текста */
 .article-container strong {
-  color: #2a5298;
+  color: var(--primary-dark);
   font-weight: 700;
-  background: linear-gradient(transparent 60%, rgba(52, 152, 219, 0.2) 40%);
+  background: linear-gradient(transparent 60%, rgba(112, 48, 160, 0.2) 40%);
   padding: 0 2px;
 }
 
 .article-container em {
-  color: #e74c3c;
+  color: var(--primary-light);
   font-style: italic;
   font-weight: 500;
 }
@@ -126,14 +186,19 @@
 .article-container hr {
   border: none;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #3498db, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-main),
+    transparent
+  );
   margin: 35px 0;
 }
 
 /* Блок с важной информацией */
 .info-box {
-  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-  border-left: 5px solid #2196f3;
+  background: var(--gradient-info);
+  border-left: 5px solid var(--info);
   border-radius: 8px;
   padding: 20px 25px;
   margin: 25px 0;
@@ -141,7 +206,7 @@
 }
 
 .info-box h4 {
-  color: #1976d2;
+  color: var(--info);
   margin-top: 0;
   border: none;
   padding: 0;
@@ -187,7 +252,7 @@
 
 .image-caption {
   font-style: italic;
-  color: #000000;
+  color: var(--text-dark);
   font-size: 1em;
   margin-top: 8px;
   line-height: 1.4;
@@ -266,40 +331,40 @@
   align-items: center;
   gap: 10px;
   padding: 12px 20px;
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  border: 2px solid #3498db;
+  background: var(--nav-gradient);
+  border: 2px solid var(--nav-accent-dark);
   border-radius: 25px;
-  color: white;
+  color: var(--text-light);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 15px rgba(149, 165, 166, 0.3);
   text-decoration: none;
   min-width: 120px;
   justify-content: center;
 }
 
 .nav-button:hover {
-  background: linear-gradient(135deg, #2980b9, #3498db);
+  background: var(--nav-gradient-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+  box-shadow: 0 4px 15px rgba(149, 165, 166, 0.3);
 }
 
 .nav-button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 15px rgba(149, 165, 166, 0.3);
 }
 
 /* Специфичные стили для кнопки "Назад" */
 .nav-prev {
-  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
-  border-color: #95a5a6;
+  background: linear-gradient(135deg, var(--gray-dark), #7f8c8d);
+  border-color: var(--gray-dark);
   box-shadow: 0 4px 15px rgba(149, 165, 166, 0.3);
 }
 
 .nav-prev:hover {
-  background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+  background: linear-gradient(135deg, #7f8c8d, var(--gray-dark));
   box-shadow: 0 6px 20px rgba(149, 165, 166, 0.4);
 }
 
@@ -316,24 +381,11 @@
   transition: transform 0.3s ease;
 }
 
-/* .nav-prev:hover .nav-arrow {
-  transform: translateX(-3px);
-}
-
-.nav-next:hover .nav-arrow {
-  transform: translateX(3px);
-} */
-
-/* Текст в кнопках */
-.nav-text {
-  white-space: nowrap;
-}
-
 /* Центральный заголовок */
 .nav-title {
   flex: 1;
   text-align: center;
-  color: #2c3e50;
+  color: var(--text-dark);
   font-size: 14px;
   font-weight: 500;
   padding: 0 15px;
@@ -347,32 +399,36 @@
   padding: 0 10px;
 }
 
-.video-lesson-btn {
+.video-lesson-btn,
+.stories-btn {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 12px 20px;
-  background: linear-gradient(135deg, #ffe563, #ffdb28);
-  border: 2px solid #ffc800;
+  background: var(--gradient-accent);
+  border: 2px solid var(--accent-main);
   border-radius: 25px;
-  color: #3e3e3e;
+  color: var(--text-dark);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px #ffc8004d;
+  box-shadow: 0 4px 15px rgba(255, 200, 0, 0.3);
   text-decoration: none;
+  margin: 0 10px;
 }
 
-.video-lesson-btn:hover {
-  background: linear-gradient(135deg, #ffdb28, #ffe563);
+.video-lesson-btn:hover,
+.stories-btn:hover {
+  background: linear-gradient(135deg, var(--accent-hover), var(--accent-main));
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px #ffc8004d;
+  box-shadow: 0 6px 20px rgba(255, 200, 0, 0.4);
 }
 
-.video-lesson-btn:active {
+.video-lesson-btn:active,
+.stories-btn:active {
   transform: translateY(0);
-  box-shadow: 0 2px 10px #ffc8004d;
+  box-shadow: 0 2px 10px rgba(255, 200, 0, 0.3);
 }
 
 /* Стили для иконки-картинки */
@@ -383,7 +439,8 @@
   transition: transform 0.3s ease;
 }
 
-.video-lesson-btn:hover .video-icon {
+.video-lesson-btn:hover .video-icon,
+.stories-btn:hover .video-icon {
   transform: scale(1.1);
 }
 
@@ -423,18 +480,12 @@
     font-size: 1.05em;
   }
 
-  .definition-box::before {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-  }
-
   .video-lesson-header {
-    /* justify-content: center; */
     margin-bottom: 15px;
   }
 
-  .video-lesson-btn {
+  .video-lesson-btn,
+  .stories-btn {
     padding: 10px 16px;
     font-size: 14px;
   }
@@ -469,19 +520,13 @@
     padding: 18px;
   }
 
-  .definition-box::before {
-    width: 30px;
-    height: 30px;
-    font-size: 14px;
-    top: -15px;
-  }
-
   .article-container ul,
   .article-container ol {
     padding-left: 25px;
   }
 
-  .video-lesson-btn {
+  .video-lesson-btn,
+  .stories-btn {
     padding: 8px 14px;
     font-size: 13px;
   }

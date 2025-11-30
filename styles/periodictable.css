@@ -1,3 +1,17 @@
+:root {
+  /* Основная фиолетовая палитра */
+  --primary-dark: #5a2d82;
+  --primary-main: #7030a0;
+  --primary-light: #8a4db8;
+  --primary-lighter: #a78bfa;
+  --primary-lightest: #d4c0db;
+
+  /* Акцентные цвета */
+  --accent-main: #ffc800;
+  --accent-hover: #ffb20c;
+  --accent-dark: #e6b400;
+}
+
 /* Стили для модального окна */
 .modal-overlay {
   position: fixed;
@@ -5,7 +19,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(90, 45, 130, 0.7);
   backdrop-filter: blur(5px);
   display: none;
   justify-content: center;
@@ -36,7 +50,7 @@
 }
 
 .modal-header {
-  background: linear-gradient(135deg, #2a5298, #1e3c72);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-main));
   color: white;
   padding: 20px 25px;
   display: flex;
@@ -133,7 +147,7 @@
 }
 
 .modal-button {
-  background: linear-gradient(135deg, #3498db, #2980b9);
+  background: linear-gradient(135deg, var(--primary-main), var(--primary-dark));
   border: none;
   color: white;
   padding: 10px 20px;
@@ -145,9 +159,9 @@
 }
 
 .modal-button:hover {
-  background: linear-gradient(135deg, #2980b9, #3498db);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-main));
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 12px rgba(112, 48, 160, 0.3);
 }
 
 /* Анимация появления */
