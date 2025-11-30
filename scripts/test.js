@@ -107,7 +107,7 @@ function displayQuestion(index) {
         }" data-index="${i}">
           <img src="${answer.image}" alt="${
         answer.text
-      }" onerror="this.src='https://victor2004.github.io/learning-chemistry-web/media/underConstruction.png'">
+      }" onerror="this.src='https://victor2004.github.io/learning-chemistry-web/media/underConstruction.webp'">
           <div>${answer.text}</div>
         </div>
       `;

@@ -32,19 +32,19 @@
           "answers": [
             {
               "text": "Вариант A",
-              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.png"
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.webp"
             },
             {
               "text": "Вариант B",
-              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.png"
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.webp"
             },
             {
               "text": "Вариант C",
-              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.png"
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.webp"
             },
             {
               "text": "Вариант D",
-              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.png"
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.webp"
             }
           ],
           "correctAnswer": 0,
