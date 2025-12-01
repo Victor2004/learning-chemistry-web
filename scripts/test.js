@@ -21,7 +21,7 @@ async function loadTest(testId) {
     }
 
     // Обновляем заголовки страницы
-    document.title = currentTest.title;
+    document.title = "[Тест] " + currentTest.title;
 
     // Инициализируем массив ответов
     userAnswers = Array(currentTest.questions.length).fill(null);
