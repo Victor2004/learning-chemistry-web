@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Добавьте в конец файла notes.js
+// Функции для работы с модальным окном Stories
 document.addEventListener("DOMContentLoaded", function () {
   const storiesOpenButton = document.getElementById("openStories");
   const storiesModal = document.getElementById("storiesModal");
@@ -168,10 +168,6 @@ document.addEventListener("DOMContentLoaded", function () {
               </div>
               <button class="story-nav story-next" id="storyNext">▶</button>
             </div>
-          </div>
-          
-          <div class="modal-footer">
-            <button class="modal-button" id="closeStoriesBtn">Закрыть</button>
           </div>
         </div>
       </div>

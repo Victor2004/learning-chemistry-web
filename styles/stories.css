@@ -1,0 +1,239 @@
+/* Стили для историй (Stories) */
+.stories-modal {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.stories-content {
+  padding: 0;
+  /* height: calc(100% - 120px); */
+  height: 100%;
+  position: relative;
+}
+
+.stories-container {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.story-item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.story-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border-radius: 15px; */
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
+  /* background: linear-gradient(135deg, var(--primary-dark), var(--primary-main)); */
+}
+
+.story-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.511);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(20px);
+  text-align: center;
+}
+
+.story-caption h3 {
+  color: white;
+  margin: 0 0 5px 0;
+  font-size: 1.4em;
+  border: none;
+  padding: 0;
+}
+
+.story-caption p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-size: 1em;
+  text-align: center;
+}
+
+.stories-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.story-nav {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--primary-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.story-nav:hover {
+  background: white;
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.story-progress {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.story-progress .progress-bar {
+  display: flex;
+  gap: 8px;
+  height: 4px;
+}
+
+.story-progress .progress-fill {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.story-progress .progress-fill::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+  background: white;
+  transition: width 0.5s linear;
+}
+
+.story-progress .progress-fill.active::after {
+  width: 100%;
+  animation: progressFill 5s linear forwards;
+}
+
+.story-progress .progress-fill.viewed::after {
+  width: 100%;
+  background: white;
+}
+
+@keyframes progressFill {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Адаптивность для историй */
+@media (max-width: 768px) {
+  .stories-modal {
+    height: 80vh !important;
+    max-height: 700px;
+  }
+
+  .story-caption {
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    padding: 12px;
+  }
+
+  .story-caption h3 {
+    font-size: 1.2em;
+  }
+
+  .story-caption p {
+    font-size: 0.9em;
+  }
+
+  .story-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stories-modal {
+    height: 75vh !important;
+    max-height: 600px;
+    border-radius: 15px !important;
+  }
+
+  .story-caption {
+    bottom: 15px;
+    padding: 10px;
+  }
+
+  .story-caption h3 {
+    font-size: 1.1em;
+  }
+
+  .story-caption p {
+    font-size: 0.85em;
+  }
+
+  .story-nav {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .stories-controls {
+    padding: 0 15px;
+  }
+}
+
+/* Соотношение сторон как у смартфона */
+.story-item::before {
+  content: "";
+  display: block;
+  padding-top: 177.78%; /* 9:16 соотношение сторон */
+}
+
+.story-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
