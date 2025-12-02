@@ -246,9 +246,8 @@
 @media (max-width: 480px) {
   .stories-modal {
     height: 100vh !important;
-    max-height: 100vh !important;
+    max-height: 94vh;
     width: 100% !important;
-    border-radius: 0 !important;
   }
 
   .story-close-btn {
