@@ -6,65 +6,44 @@
       "questions": [
         {
           "type": "text",
-          "text": "Что изучает химия?",
-          "image": "https://victor2004.github.io/learning-chemistry-web/media/logo.webp",
-          "answers": [
-            "Вещества и их свойства",
-            "Живые организмы",
-            "Землю",
-            "Космос"
-          ],
+          "text": "Витя наблюдает как закипает вода в кастрюле. Является ли это наблюдение научным?",
+          "image": "https://victor2004.github.io/learning-chemistry-web/media/question1.webp",
+          "answers": ["Да", "Нет"],
           "correctAnswer": 0,
-          "explanation": "Химия изучает вещества, их состав, строение, свойства и превращения."
-        },
-        {
-          "type": "text_with_gap",
-          "text": "Метод изучения, который проводят в строго контролируемых условиях, называют ______.",
-          "image": null,
-          "answers": ["эксперимент", "наблюдение", "моделирование", "анализ"],
-          "correctAnswer": 0,
-          "explanation": "Эксперимент - это исследование, проводимое в строго контролируемых условиях."
+          "explanation": "Наблюдение является научным"
         },
         {
           "type": "image_choice",
-          "text": "Какая из этих моделей представляет молекулу воды?",
+          "text": "Что из этого не является моделью?",
           "image": null,
           "answers": [
             {
               "text": "Вариант A",
-              "image": "https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/t1.webp"
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/question2_1.webp"
             },
             {
               "text": "Вариант B",
-              "image": "https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/t2.webp"
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/question2_2.webp"
             },
             {
               "text": "Вариант C",
-              "image": "https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/t3.webp"
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/question2_3.webp"
             },
             {
               "text": "Вариант D",
-              "image": "https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/t4.webp"
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/question2_4.webp"
             }
           ],
-          "correctAnswer": 0,
-          "explanation": "Модель A показывает правильное строение молекулы воды H₂O."
+          "correctAnswer": 2,
+          "explanation": "Почему правильный ответ ложка?"
         },
         {
           "type": "text",
-          "text": "Какой метод познания используется для изучения объектов, которые невозможно наблюдать напрямую?",
+          "text": "Сопоставьте:\n1. Эксперимент\n2. Моделирование\n3. Наблюдение / А. Рома  решил выяснить как сделать идеальный бутерброд с колбасой. Он Попробовал разные комбинации: сыр на колбасу, колбаса на сыр, и даже колбаса с сыром внутри.\nБ. Леша решил понять, почему коты всегда спят на клавиатуре.  Он смотрел за котом и за своими действиями несколько дней и понял: Кот постоянно ложится на клавиатуру, когда я пытаюсь работать.\nВ. Даня решил пофантазировать на тему: как бы выглядел мир, если бы все ходили на руках. Для этого он взял несколько своих солдатиков и стал ими играть. Вскоре он понял что, если солдатики ходят вверх ногами, то им нужен дом с очень низкими окнами и розетками.",
           "image": null,
-          "answers": ["Моделирование", "Эксперимент", "Наблюдение", "Анализ"],
-          "correctAnswer": 0,
-          "explanation": "Моделирование позволяет изучать объекты через их модели-аналоги."
-        },
-        {
-          "type": "text_with_gap",
-          "text": "Обширная область знаний, которая изучает естественные явления и процессы, происходящие в окружающей природе, называется ______.",
-          "image": null,
-          "answers": ["естествознание", "химия", "физика", "биология"],
-          "correctAnswer": 0,
-          "explanation": "Естествознание - это общая наука о природных явлениях и процессах."
+          "answers": ["1-А 2-Б 3-В", "1-Б 2-В 3-А", "1-В 2-Б 3-А", "1-А 2-В 3-Б", "1-Б 2-А 3-В"],
+          "correctAnswer": 3,
+          "explanation": "АВБ"
         }
       ]
     }
