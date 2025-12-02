@@ -109,142 +109,305 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Функции для работы с модальным окном Stories
+// Функции для работы с модальным окном таблицы Менделеева
 document.addEventListener("DOMContentLoaded", function () {
-  const storiesOpenButton = document.getElementById("openStories");
-  const storiesModal = document.getElementById("storiesModal");
+  const openButton = document.getElementById("openPeriodicTable");
+  const closeButton = document.getElementById("closePeriodicTable");
+  const modal = document.getElementById("periodicTableModal");
 
-  if (!storiesModal) {
-    // Создаем модальное окно для историй, если его нет
-    const modalHTML = `
-      <div class="modal-overlay" id="storiesModal">
-        <div class="modal-container stories-modal" style="max-width: 400px; height: 85vh;">
-          <div class="modal-header">
-            <h2>История химии</h2>
-            <button class="modal-close" id="closeStories">&times;</button>
-          </div>
-          
-          <div class="modal-content stories-content" style="padding: 0; height: calc(100% - 120px);">
-            <div class="stories-container">
-              <div class="story-item active">
-                <img src="https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/story1.webp" 
-                     alt="История 1" 
-                     class="story-image">
-                <div class="story-caption">
-                  <h3>Алхимия</h3>
-                  <p>Древние алхимики искали философский камень</p>
-                </div>
-              </div>
-              
-              <div class="story-item">
-                <img src="https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/story2.webp"
-                     alt="История 2" 
-                     class="story-image">
-                <div class="story-caption">
-                  <h3>Первые опыты</h3>
-                  <p>Эксперименты Роберта Бойля в 17 веке</p>
-                </div>
-              </div>
-              
-              <div class="story-item">
-                <img src="https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/story3.webp"
-                     alt="История 3" 
-                     class="story-image">
-                <div class="story-caption">
-                  <h3>Таблица Менделеева</h3>
-                  <p>Создание периодической таблицы в 1869 году</p>
-                </div>
-              </div>
-            </div>
-            
-            <div class="stories-controls">
-              <button class="story-nav story-prev" id="storyPrev">◀</button>
-              <div class="story-progress">
-                <div class="progress-bar">
-                  <div class="progress-fill active"></div>
-                  <div class="progress-fill"></div>
-                  <div class="progress-fill"></div>
-                </div>
-              </div>
-              <button class="story-nav story-next" id="storyNext">▶</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-
-    document.body.insertAdjacentHTML("beforeend", modalHTML);
+  // Открытие модального окна
+  if (openButton) {
+    openButton.addEventListener("click", function () {
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
   }
 
-  // Инициализация после создания DOM
+  // Закрытие модального окна
+  function closeModal() {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener("click", closeModal);
+  }
+
+  // Закрытие по клику на оверлей
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Закрытие по клавише Escape
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("active")) {
+      closeModal();
+    }
+  });
+});
+
+// Функции для работы с модальным окном видео урока
+document.addEventListener("DOMContentLoaded", function () {
+  const videoOpenButton = document.getElementById("openVideoLesson");
+  const videoCloseButton = document.getElementById("closeVideoLesson");
+  const videoModal = document.getElementById("videoLessonModal");
+
+  // Открытие модального окна с видео
+  if (videoOpenButton) {
+    videoOpenButton.addEventListener("click", function () {
+      videoModal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  }
+
+  // Закрытие модального окна с видео
+  function closeVideoModal() {
+    videoModal.classList.remove("active");
+    document.body.style.overflow = "";
+
+    // Останавливаем видео при закрытии
+    const iframe = videoModal.querySelector("iframe");
+    if (iframe) {
+      const iframeSrc = iframe.src;
+      iframe.src = iframeSrc;
+    }
+  }
+
+  if (videoCloseButton) {
+    videoCloseButton.addEventListener("click", closeVideoModal);
+  }
+
+  // Закрытие по клику на оверлей
+  videoModal.addEventListener("click", function (e) {
+    if (e.target === videoModal) {
+      closeVideoModal();
+    }
+  });
+
+  // Закрытие по клавише Escape
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && videoModal.classList.contains("active")) {
+      closeVideoModal();
+    }
+  });
+});
+
+// Функции для работы с модальным окном Stories
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM loaded, initializing Stories modal...");
+
+  // Инициализация историй
   initStoriesModal();
 });
 
 function initStoriesModal() {
+  console.log("initStoriesModal called");
+
   const storiesOpenButton = document.getElementById("openStories");
   const storiesModal = document.getElementById("storiesModal");
-  const closeStoriesBtn = document.getElementById("closeStoriesBtn");
   const closeStories = document.getElementById("closeStories");
   const storyPrev = document.getElementById("storyPrev");
   const storyNext = document.getElementById("storyNext");
   const stories = document.querySelectorAll(".story-item");
   const progressBars = document.querySelectorAll(".progress-fill");
 
+  console.log("Elements found:", {
+    storiesOpenButton,
+    storiesModal,
+    closeStories,
+    storyPrev,
+    storyNext,
+    storiesCount: stories.length,
+    progressBarsCount: progressBars.length,
+  });
+
+  if (!storiesOpenButton) {
+    console.error("openStories button not found!");
+    return;
+  }
+
+  if (!storiesModal) {
+    console.error("storiesModal not found!");
+    return;
+  }
+
   let currentStory = 0;
+  let autoPlayInterval;
+  let isAutoPlaying = false;
 
   // Открытие модального окна историй
-  if (storiesOpenButton) {
-    storiesOpenButton.addEventListener("click", function () {
-      storiesModal.classList.add("active");
-      document.body.style.overflow = "hidden";
-      currentStory = 0;
-      showStory(currentStory);
-    });
-  }
+  storiesOpenButton.addEventListener("click", function () {
+    console.log("Open Stories button clicked");
+    storiesModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+    currentStory = 0;
+    showStory(currentStory);
+    startAutoPlay();
+  });
 
   // Закрытие модального окна
   function closeStoriesModal() {
+    console.log("Closing Stories modal");
     storiesModal.classList.remove("active");
     document.body.style.overflow = "";
-  }
-
-  if (closeStoriesBtn) {
-    closeStoriesBtn.addEventListener("click", closeStoriesModal);
+    stopAutoPlay();
   }
 
   if (closeStories) {
     closeStories.addEventListener("click", closeStoriesModal);
+  } else {
+    console.error("closeStories button not found!");
   }
 
   // Показать определенную историю
   function showStory(index) {
+    console.log("Showing story", index);
+
     stories.forEach((story, i) => {
-      story.classList.toggle("active", i === index);
+      story.classList.remove("active");
+      if (i === index) {
+        story.classList.add("active");
+      }
     });
 
     progressBars.forEach((bar, i) => {
-      bar.classList.toggle("active", i === index);
-      bar.classList.toggle("viewed", i < index);
+      bar.classList.remove("active", "viewed");
+      if (i < index) {
+        bar.classList.add("viewed");
+      } else if (i === index) {
+        bar.classList.add("active");
+      }
     });
+
+    // Обновить состояние кнопок навигации
+    if (storyPrev) {
+      storyPrev.disabled = index === 0;
+    }
+    if (storyNext) {
+      storyNext.disabled = index === stories.length - 1;
+    }
+
+    // Сбросить и перезапустить автоплей
+    if (isAutoPlaying) {
+      stopAutoPlay();
+      startAutoPlay();
+    }
   }
 
   // Переключение историй
+  function goToNextStory() {
+    if (currentStory < stories.length - 1) {
+      currentStory++;
+      showStory(currentStory);
+    } else {
+      closeStoriesModal();
+    }
+  }
+
+  function goToPrevStory() {
+    if (currentStory > 0) {
+      currentStory--;
+      showStory(currentStory);
+    }
+  }
+
   if (storyPrev) {
     storyPrev.addEventListener("click", function () {
-      if (currentStory > 0) {
-        currentStory--;
-        showStory(currentStory);
-      }
+      goToPrevStory();
     });
   }
 
   if (storyNext) {
     storyNext.addEventListener("click", function () {
-      if (currentStory < stories.length - 1) {
-        currentStory++;
-        showStory(currentStory);
+      goToNextStory();
+    });
+  }
+
+  // Автоматическое переключение историй
+  function startAutoPlay() {
+    isAutoPlaying = true;
+    console.log("Starting autoplay");
+    autoPlayInterval = setInterval(goToNextStory, 5000);
+  }
+
+  function stopAutoPlay() {
+    isAutoPlaying = false;
+    console.log("Stopping autoplay");
+    clearInterval(autoPlayInterval);
+  }
+
+  // Функция для определения клика по половинам окна
+  function handleStoryClick(e) {
+    const container = e.currentTarget;
+    const rect = container.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const containerWidth = rect.width;
+
+    // Определяем, по какой половине был клик
+    if (clickX < containerWidth / 2) {
+      // Левая половина - предыдущая история
+      goToPrevStory();
+    } else {
+      // Правая половина - следующая история
+      goToNextStory();
+    }
+  }
+
+  // Добавляем обработчики клика на контейнер историй для переключения по половинам
+  const storiesContainer = document.querySelector(".stories-container");
+  if (storiesContainer) {
+    storiesContainer.addEventListener("click", handleStoryClick);
+  }
+
+  // Также добавляем обработчики на само модальное окно
+  const storiesContent = document.querySelector(".stories-content");
+  if (storiesContent) {
+    storiesContent.addEventListener("click", function (e) {
+      // Проверяем, не кликнули ли мы на элементы управления (кнопки, прогресс-бар)
+      if (
+        !e.target.closest(".story-close-btn") &&
+        !e.target.closest(".story-progress") &&
+        !e.target.closest(".stories-controls")
+      ) {
+        const container = e.currentTarget;
+        const rect = container.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const containerWidth = rect.width;
+
+        // Определяем, по какой половине был клик
+        if (clickX < containerWidth / 2) {
+          // Левая половина - предыдущая история
+          goToPrevStory();
+        } else {
+          // Правая половина - следующая история
+          goToNextStory();
+        }
       }
     });
+  }
+
+  // Добавляем индикаторы половин для лучшего UX
+  addHalfIndicators();
+
+  // Функция для добавления индикаторов половин (по желанию)
+  function addHalfIndicators() {
+    // Создаем индикаторы для половин
+    const leftIndicator = document.createElement("div");
+    leftIndicator.className = "story-half-indicator story-half-left";
+    leftIndicator.innerHTML = "◀";
+
+    const rightIndicator = document.createElement("div");
+    rightIndicator.className = "story-half-indicator story-half-right";
+    rightIndicator.innerHTML = "▶";
+
+    // Добавляем индикаторы в контейнер
+    const storiesContent = document.querySelector(".stories-content");
+    if (storiesContent) {
+      storiesContent.appendChild(leftIndicator);
+      storiesContent.appendChild(rightIndicator);
+    }
   }
 
   // Закрытие по клику на оверлей
@@ -263,38 +426,30 @@ function initStoriesModal() {
     // Навигация стрелками
     if (storiesModal.classList.contains("active")) {
       if (e.key === "ArrowLeft") {
-        if (currentStory > 0) {
-          currentStory--;
-          showStory(currentStory);
-        }
-      } else if (e.key === "ArrowRight") {
-        if (currentStory < stories.length - 1) {
-          currentStory++;
-          showStory(currentStory);
-        }
+        goToPrevStory();
+      } else if (e.key === "ArrowRight" || e.key === " ") {
+        goToNextStory();
       }
     }
   });
 
-  // Автоматическое переключение историй (опционально)
-  let autoPlayInterval;
+  // Остановка автоплея при наведении
+  storiesModal.addEventListener("mouseenter", stopAutoPlay);
+  storiesModal.addEventListener("mouseleave", function () {
+    if (storiesModal.classList.contains("active")) {
+      startAutoPlay();
+    }
+  });
 
-  function startAutoPlay() {
-    autoPlayInterval = setInterval(() => {
-      if (currentStory < stories.length - 1) {
-        currentStory++;
-        showStory(currentStory);
-      } else {
-        clearInterval(autoPlayInterval);
+  // Остановка автоплея при прикосновении на мобильных
+  storiesModal.addEventListener("touchstart", stopAutoPlay);
+  storiesModal.addEventListener("touchend", function () {
+    setTimeout(() => {
+      if (storiesModal.classList.contains("active")) {
+        startAutoPlay();
       }
-    }, 5000); // 5 секунд на каждую историю
-  }
+    }, 1000);
+  });
 
-  function stopAutoPlay() {
-    clearInterval(autoPlayInterval);
-  }
-
-  // Запускаем автоплей при открытии
-  storiesModal.addEventListener("modalOpen", startAutoPlay);
-  storiesModal.addEventListener("modalClose", stopAutoPlay);
+  console.log("Stories modal initialized successfully");
 }

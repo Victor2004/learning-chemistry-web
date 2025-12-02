@@ -193,40 +193,69 @@
             >
             </iframe>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <!-- <div class="video-description">
-            <h3>Описание урока</h3>
-            <p>
-              В этом видео мы рассмотрим основные понятия химии: атомы, молекулы
-              и химические реакции. Узнаем, как происходят химические
-              превращения и какие законы ими управляют.
-            </p>
+    <!-- Модальное окно историй (Stories) -->
+    <div class="modal-overlay" id="storiesModal">
+      <div class="modal-container stories-modal">
+        <div class="stories-content">
+          <!-- Кнопка закрытия в правом верхнем углу -->
+          <button class="story-close-btn" id="closeStories">&times;</button>
 
-            <div class="video-info">
-              <div class="info-item">
-                <span class="info-label">Длительность:</span>
-                <span class="info-value">15:30</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Сложность:</span>
-                <span class="info-value">Начальная</span>
-              </div>
-              <div class="info-item">
-                <span class="info-label">Темы:</span>
-                <span class="info-value">Атомы, Молекулы, Реакции</span>
+          <!-- Прогресс-бар -->
+          <div class="story-progress">
+            <div class="progress-fill"></div>
+            <div class="progress-fill"></div>
+            <div class="progress-fill"></div>
+          </div>
+
+          <!-- Контейнер историй -->
+          <div class="stories-container">
+            <div class="story-item active">
+              <img
+                src="https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/story1.webp"
+                alt="История 1"
+                class="story-image"
+              />
+              <div class="story-caption">
+                <h3>Алхимия</h3>
+                <p>Древние алхимики искали философский камень</p>
               </div>
             </div>
-          </div> -->
-        </div>
 
-        <!-- <div class="modal-footer">
-          <button class="modal-button secondary" id="videoCloseBtn">
-            Закрыть
-          </button>
-          <button class="modal-button primary" id="videoNextBtn">
-            Следующее видео
-          </button>
-        </div> -->
+            <div class="story-item">
+              <img
+                src="https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/story2.webp"
+                alt="История 2"
+                class="story-image"
+              />
+              <div class="story-caption">
+                <h3>Первые опыты</h3>
+                <p>Эксперименты Роберта Бойля в 17 веке</p>
+              </div>
+            </div>
+
+            <div class="story-item">
+              <img
+                src="https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/story3.webp"
+                alt="История 3"
+                class="story-image"
+              />
+              <div class="story-caption">
+                <h3>Таблица Менделеева</h3>
+                <p>Создание периодической таблицы в 1869 году</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Кнопки навигации -->
+          <div class="stories-controls">
+            <button class="story-nav story-prev" id="storyPrev">◀</button>
+            <button class="story-nav story-next" id="storyNext">▶</button>
+          </div>
+        </div>
       </div>
     </div>
 
