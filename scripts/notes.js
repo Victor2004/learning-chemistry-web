@@ -218,7 +218,7 @@ function initStoriesModal() {
   function startAutoPlay() {
     isAutoPlaying = true;
     console.log("Starting autoplay");
-    autoPlayInterval = setInterval(goToNextStory, 7000);
+    autoPlayInterval = setInterval(goToNextStory, 5000);
   }
 
   function stopAutoPlay() {
