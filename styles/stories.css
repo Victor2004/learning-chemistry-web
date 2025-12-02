@@ -6,7 +6,7 @@
   max-height: 700px;
   border-radius: 20px;
   overflow: hidden;
-  background: #000;
+  background: #ffffff;
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
 }
@@ -20,14 +20,14 @@
   padding: 0;
   height: 100%;
   position: relative;
-  background: #000;
+  background: #ffffff;
 }
 
 .stories-container {
   height: 100%;
   position: relative;
   overflow: hidden;
-  background: #000;
+  background: #ffffff;
 }
 
 .story-item {
@@ -42,7 +42,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000;
+  background: #ffffff;
 }
 
 .story-item.active {
@@ -96,7 +96,7 @@
 .story-progress .progress-fill {
   flex: 1;
   height: 3px;
-  background: rgba(255, 255, 255, 0.3);
+  background: #0000004d;
   border-radius: 2px;
   overflow: hidden;
 }
@@ -106,7 +106,7 @@
   display: block;
   width: 0;
   height: 100%;
-  background: white;
+  background: #8a4db8;
   transition: width 0.1s linear;
 }
 
@@ -117,7 +117,7 @@
 
 .story-progress .progress-fill.viewed::after {
   width: 100%;
-  background: white;
+  background: #bba4ff;
 }
 
 @keyframes storyProgress {
@@ -135,7 +135,7 @@
   bottom: 20px;
   left: 20px;
   right: 20px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.546);
   color: white;
   padding: 15px;
   border-radius: 10px;
