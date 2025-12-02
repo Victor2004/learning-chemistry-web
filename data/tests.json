@@ -7,7 +7,7 @@
         {
           "type": "text",
           "text": "Что изучает химия?",
-          "image": null,
+          "image": "https://victor2004.github.io/learning-chemistry-web/media/logo.webp",
           "answers": [
             "Вещества и их свойства",
             "Живые организмы",
@@ -32,19 +32,19 @@
           "answers": [
             {
               "text": "Вариант A",
-              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.webp"
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/t1.webp"
             },
             {
               "text": "Вариант B",
-              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.webp"
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/t2.webp"
             },
             {
               "text": "Вариант C",
-              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.webp"
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/t3.webp"
             },
             {
               "text": "Вариант D",
-              "image": "https://victor2004.github.io/learning-chemistry-web/media/underConstruction.webp"
+              "image": "https://victor2004.github.io/learning-chemistry-web/media/lessons/lesson1/t4.webp"
             }
           ],
           "correctAnswer": 0,
