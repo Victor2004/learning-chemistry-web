@@ -246,7 +246,7 @@
 @media (max-width: 480px) {
   .stories-modal {
     height: 100vh !important;
-    /* max-height: 90vh; */
+    max-height: 85vh;
     width: 100% !important;
   }
 
