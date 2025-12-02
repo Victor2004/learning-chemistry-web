@@ -83,7 +83,7 @@
 }
 
 .bubble-text {
-  animation: textAppear 0.5s ease-out;
+  animation: textAppear 0.26s ease-out;
 }
 
 /* Анимация подпрыгивания облачка */
